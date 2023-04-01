@@ -3,6 +3,7 @@ const Usuario = require('../models/usuario');
 const Habitacion = require('../models/habitacion')
 const Servicios = require('../models/server');
 const Evento = require('../models/evento');
+const Departamento =require('../models/departamento-nombre');
 
 //Este archivo maneja validaciones personalizadas
 
@@ -87,14 +88,27 @@ const existeHabitacionById = async (id) => {
     return existeHabitacion;
 }
 
+const existeDepartamento = async( nombre = '' ) => {
+
+    //Verificamos si el correo ya existe en la DB
+    const existeDepartamento = await Departamento.findOne( { nombre } );
+
+    //Si existe (es true) lanzamos excepción
+    if ( existeDepartamento ) {
+        throw new Error(`El correo: ${ nombre } ya existe y esta registrado en la DB`);
+    }
+
+}
+
+
 module.exports = {
     esRoleValido,
     emailExiste,
     existeUsuarioPorId,
     existeRol,
     existeRolPorId,
-    existeRolPorId,
     existeHabitacionById,
     existeServicio,
-    existeEvento
+    existeEvento,
+    existeDepartamento
 }

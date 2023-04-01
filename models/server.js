@@ -19,7 +19,9 @@ class Server {
             habitacion: '/api/habitacion',
             adminHotel:   '/api/adminHotel',
             servicios:'/api/servicios',
-            evento:'/api/evento'
+            evento:'/api/evento',
+            adminHotel:   '/api/adminHotel',
+            departamentos: '/api/departamentos'
         }
 
 
@@ -64,6 +66,7 @@ class Server {
         this.app.use(this.paths.reservacion, require('../routes/reservacion'));
         this.app.use(this.paths.servicios, require('../routes/servicios'));
         this.app.use(this.paths.evento, require('../routes/evento'));
+        this.app.use(this.paths.departamentos, require('../routes/departamento-nombre'));
     }
 
 
