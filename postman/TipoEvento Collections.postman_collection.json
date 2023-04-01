@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "e927137d-f31e-4c13-a3b9-1f63b4837e88",
+		"name": "TipoEvento Collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "VerTipoEvento",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Emilio Jose\",\r\n    \"email\": \"emilio233252345@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/tipoEvento/mostrar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tipoEvento",
+						"mostrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar TipoEvento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIxYjY0MjIyNjY3OTExZjI4ZTI0ZWUiLCJub21icmUiOiJBbGVqYW5kcm8iLCJjYXJ0IjpbXSwiaWF0IjoxNjc5OTMwOTc2LCJleHAiOjE2Nzk5NDUzNzZ9.wreo4fWQI890AS21TkOxwhevUgk1S7frhzzz5FNZjTo",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"XS\",\r\n    \"precio\": 8000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/tipoevento/agregar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tipoevento",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar TipoEvento",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIxYjY0MjIyNjY3OTExZjI4ZTI0ZWUiLCJub21icmUiOiJBbGVqYW5kcm8iLCJjYXJ0IjpbXSwiaWF0IjoxNjc5OTMwOTc2LCJleHAiOjE2Nzk5NDUzNzZ9.wreo4fWQI890AS21TkOxwhevUgk1S7frhzzz5FNZjTo",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"15 años\",\r\n    \"precio\": 5000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/tipoevento/editar/6421c8f4cbcc907382482d57",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tipoevento",
+						"editar",
+						"6421c8f4cbcc907382482d57"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar TIpoEvento",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIxYzliMmNiY2M5MDczODI0ODJkNjQiLCJub21icmUiOiJKb3NlIEx1aXMiLCJjYXJ0IjpbXSwiaWF0IjoxNjc5OTM1OTMzLCJleHAiOjE2Nzk5NTAzMzN9.t5HGihJWIjfeHnsZBiSoGBzi7azdChLZf9KSU8nmAWs",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/tipoevento/eliminar/6421c967cbcc907382482d60",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tipoevento",
+						"eliminar",
+						"6421c967cbcc907382482d60"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

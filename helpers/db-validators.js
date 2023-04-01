@@ -5,6 +5,7 @@ const Servicios = require('../models/server');
 const Evento = require('../models/evento');
 const Departamento =require('../models/departamento-nombre');
 
+
 //Este archivo maneja validaciones personalizadas
 
 const esRoleValido = async( rol = '' ) => {
@@ -35,7 +36,6 @@ const existeEvento = async( nombreEvento = '' ) => {
     }
 
 }
-
 
 const emailExiste = async( correo = '' ) => {
 
@@ -106,9 +106,9 @@ module.exports = {
     emailExiste,
     existeUsuarioPorId,
     existeRol,
-    existeRolPorId,
     existeHabitacionById,
     existeServicio,
     existeEvento,
-    existeDepartamento
+    existeDepartamento,
+    existeRolPorId
 }
