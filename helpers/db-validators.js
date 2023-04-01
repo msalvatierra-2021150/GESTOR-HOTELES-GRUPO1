@@ -1,6 +1,6 @@
 const Role = require('../models/role');
 const Usuario = require('../models/usuario');
-
+const Habitacion = require('../models/habitacion')
 
 //Este archivo maneja validaciones personalizadas
 
@@ -58,11 +58,20 @@ const existeRolPorId = async(id) => {
     }
 }
 
+const existeHabitacionById = async (id) => {
+    const existeHabitacion = await Habitacion.findById(id);
+    if (!existeHabitacion) {
+        throw new Error(`La habitacion con el codigo: ${id}, no existe en la BD`);
+    }
+    return existeHabitacion;
+}
 
 module.exports = {
     esRoleValido,
     emailExiste,
     existeUsuarioPorId,
     existeRol,
-    existeRolPorId
+    existeRolPorId,
+    existeRolPorId,
+    existeHabitacionById
 }

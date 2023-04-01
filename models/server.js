@@ -15,6 +15,8 @@ class Server {
             adminApp:   '/api/admin',
             cliente: '/api/clientes',
             roles: '/api/roles',
+            reservacion: '/api/reservaciones',
+            habitacion: '/api/habitacion',
             adminHotel:   '/api/adminHotel',
         }
 
@@ -56,6 +58,8 @@ class Server {
         this.app.use(this.paths.cliente, require('../routes/cliente')); 
         this.app.use(this.paths.roles, require('../routes/role')); 
         this.app.use(this.paths.adminHotel, require('../routes/adminHotel'));
+        this.app.use(this.paths.habitacion, require('../routes/habitacion'));
+        this.app.use(this.paths.reservacion, require('../routes/reservacion'));
     }
 
 

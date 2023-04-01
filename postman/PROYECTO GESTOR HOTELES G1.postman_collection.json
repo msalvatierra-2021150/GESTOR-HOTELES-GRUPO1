@@ -2,7 +2,11 @@
 	"info": {
 		"_postman_id": "f7feb043-3702-475d-ad58-4ffe6518b140",
 		"name": "PROYECTO GESTOR HOTELES G1",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_postman_id": "ceec7aae-37c0-428a-8658-531374dce3c0",
+		"name": "PROYECTO GESTOR HOTELES G1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25706485"
 	},
 	"item": [
 		{
@@ -531,6 +535,230 @@
 							]
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "Jhonatan Acalon",
+			"item": [
+				{
+					"name": "Reservaciones",
+					"item": [
+						{
+							"name": "Todas las reservaciones",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY4MDEzNzA5OCwiZXhwIjoxNjgwMTUxNDk4fQ.M7H9rgxOSBWEDGErz8NhuF26SKRUqRYlYoSlGtNSkNk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reservaciones activas client",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY4MDEzNzA5OCwiZXhwIjoxNjgwMTUxNDk4fQ.M7H9rgxOSBWEDGErz8NhuF26SKRUqRYlYoSlGtNSkNk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/reservacion",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"reservacion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agregar habitacion",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fechaStart\": \"2023-03-27\",\r\n    \"horaStart\": \"07:04:00Z\",\r\n    \"fechaEnd\": \"2023-04-01\",\r\n    \"horaEnd\": \"14:45:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/agregar/642247cf24523e249c929926",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"agregar",
+										"642247cf24523e249c929926"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Editar reservacion",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY4MDEzNzA5OCwiZXhwIjoxNjgwMTUxNDk4fQ.M7H9rgxOSBWEDGErz8NhuF26SKRUqRYlYoSlGtNSkNk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fechaStart\": \"2023-03-29\",\r\n    \"horaStart\": \"07:30:00Z\",\r\n    \"fechaEnd\": \"2023-04-05\",\r\n    \"horaEnd\": \"14:50:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/editar/6424dba5395124ff4a81cd45",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"editar",
+										"6424dba5395124ff4a81cd45"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar habitacion",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY4MDEzNzA5OCwiZXhwIjoxNjgwMTUxNDk4fQ.M7H9rgxOSBWEDGErz8NhuF26SKRUqRYlYoSlGtNSkNk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/eliminar/habitacion/642247ca24523e249c929923",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"eliminar",
+										"habitacion",
+										"642247ca24523e249c929923"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar reservacion",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY4MDEzNzA5OCwiZXhwIjoxNjgwMTUxNDk4fQ.M7H9rgxOSBWEDGErz8NhuF26SKRUqRYlYoSlGtNSkNk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/eliminar/6424dba5395124ff4a81cd45",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"eliminar",
+										"6424dba5395124ff4a81cd45"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agregar habitacion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY3OTk2ODE4NCwiZXhwIjoxNjc5OTgyNTg0fQ.pjjd07jdgXoXLFygnhwFAuoPi98fvyosWPEwsTw5Jpg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"precio\": 1500,\r\n    \"descripcion\": \"Buena habitacion\",\r\n    \"img\": \"una imagen\",\r\n    \"capacidad\": 4,\r\n    \"hotel\": \"63f2a384c0cb88cc2b5f1d60\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/habitacion/agregar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"habitacion",
+								"agregar"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
