@@ -4,10 +4,7 @@ const Habitacion = require('../models/habitacion')
 const Servicios = require('../models/server');
 const Evento = require('../models/evento');
 const Departamento =require('../models/departamento-nombre');
-const Habitacion = require('../models/habitacion');
 const Hotel = require('../models/hotel');
-const Role = require('../models/role');
-const Usuario = require('../models/usuario');
 
 //Este archivo maneja validaciones personalizadas
 
@@ -83,14 +80,14 @@ const existeRolPorId = async(id) => {
         throw new Error(`El rol ${ id } ya existe en la DB`);
     }
 }
-
+/*
 const existeHabitacionById = async (id) => {
     const existeHabitacion = await Habitacion.findById(id);
     if (!existeHabitacion) {
         throw new Error(`La habitacion con el codigo: ${id}, no existe en la BD`);
     }
     return existeHabitacion;
-}
+}*/
 
 const existeDepartamento = async( nombre = '' ) => {
 
@@ -101,6 +98,7 @@ const existeDepartamento = async( nombre = '' ) => {
     if ( existeDepartamento ) {
         throw new Error(`El correo: ${ nombre } ya existe y esta registrado en la DB`);
     }
+}
 
 const existeHabitacionById = async(id = '') => {
     
@@ -132,4 +130,4 @@ module.exports = {
     existeDepartamento,
     existeRolPorId,
     existeHotelById
-  };
+}
