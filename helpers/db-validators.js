@@ -1,6 +1,8 @@
 const Role = require('../models/role');
 const Usuario = require('../models/usuario');
 const Habitacion = require('../models/habitacion')
+const Servicios = require('../models/server');
+const Evento = require('../models/evento');
 
 //Este archivo maneja validaciones personalizadas
 
@@ -10,6 +12,25 @@ const esRoleValido = async( rol = '' ) => {
 
     if ( !existeRol ) {
         throw new Error(`El rol ${ rol } no está registrado en la DB`);
+    }
+
+}
+
+const existeServicio = async( nombreServicio = '' ) => {
+
+    const existeServicio = await Servicios.findOne( { nombreServicio } );
+
+    if ( existeServicio ) {
+        throw new Error(`El rol ${ nombreServicio }ya  está registrado en la DB`);
+    }
+
+}
+const existeEvento = async( nombreEvento = '' ) => {
+
+    const existeEvento = await Evento.findOne( { nombreEvento } );
+
+    if ( existeEvento ) {
+        throw new Error(`El rol ${ nombreEvento }ya  está registrado en la DB`);
     }
 
 }
@@ -73,5 +94,7 @@ module.exports = {
     existeRol,
     existeRolPorId,
     existeRolPorId,
-    existeHabitacionById
+    existeHabitacionById,
+    existeServicio,
+    existeEvento
 }
