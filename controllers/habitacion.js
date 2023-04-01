@@ -10,7 +10,8 @@ const getHabitaciones = async (req = request, res = response) => {
 
     const listaHabitaciones = await Promise.all([
         Habitacion.countDocuments(query),
-        Habitacion.find(query).populate('usuario', 'nombre')
+        Habitacion.find(query).populate('usuario', 'nombre'),
+        //Habitacion.find(query).populate('usuario', 'nombre').populate('hotel', 'nombre')
     ]);
 
     res.json({

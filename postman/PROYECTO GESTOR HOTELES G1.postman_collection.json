@@ -1,5 +1,6 @@
 {
 	"info": {
+<<<<<<< HEAD
 		"_postman_id": "f7feb043-3702-475d-ad58-4ffe6518b140",
 		"name": "PROYECTO GESTOR HOTELES G1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -7,6 +8,10 @@
 		"name": "PROYECTO GESTOR HOTELES G1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25706485",
+=======
+		"_postman_id": "753af335-171a-4d43-9d53-76ccbff6ea60",
+		"name": "PROYECTO GESTOR HOTELES G1",
+>>>>>>> origin/luis
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -540,6 +545,7 @@
 			]
 		},
 		{
+<<<<<<< HEAD
 			"name": "Jhonatan Acalon",
 			"item": [
 				{
@@ -547,24 +553,46 @@
 					"item": [
 						{
 							"name": "Todas las reservaciones",
+=======
+			"name": "Luis Pérez",
+			"item": [
+				{
+					"name": "Habitaciones",
+					"item": [
+						{
+							"name": "GET Habitaciones",
+>>>>>>> origin/luis
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "x-token",
+<<<<<<< HEAD
 										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY4MDEzNzA5OCwiZXhwIjoxNjgwMTUxNDk4fQ.M7H9rgxOSBWEDGErz8NhuF26SKRUqRYlYoSlGtNSkNk",
 										"type": "text"
 									}
 								],
 								"url": {
 									"raw": "localhost:8080/api/reservaciones/",
+=======
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/habitaciones/",
+>>>>>>> origin/luis
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
+<<<<<<< HEAD
 										"reservaciones",
+=======
+										"habitaciones",
+>>>>>>> origin/luis
 										""
 									]
 								}
@@ -572,45 +600,75 @@
 							"response": []
 						},
 						{
+<<<<<<< HEAD
 							"name": "Reservaciones activas client",
+=======
+							"name": "GET BY ID Habitacion",
+>>>>>>> origin/luis
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "x-token",
+<<<<<<< HEAD
 										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY4MDEzNzA5OCwiZXhwIjoxNjgwMTUxNDk4fQ.M7H9rgxOSBWEDGErz8NhuF26SKRUqRYlYoSlGtNSkNk",
 										"type": "text"
 									}
 								],
 								"url": {
 									"raw": "localhost:8080/api/reservaciones/reservacion",
+=======
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/habitaciones/_id",
+>>>>>>> origin/luis
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
+<<<<<<< HEAD
 										"reservaciones",
 										"reservacion"
+=======
+										"habitaciones",
+										"_id"
+>>>>>>> origin/luis
 									]
 								}
 							},
 							"response": []
 						},
 						{
+<<<<<<< HEAD
 							"name": "Agregar habitacion",
+=======
+							"name": "POST Habitacion",
+>>>>>>> origin/luis
 							"request": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "x-token",
 										"value": "",
+<<<<<<< HEAD
 										"type": "text"
+=======
+										"type": "default"
+>>>>>>> origin/luis
 									}
 								],
 								"body": {
 									"mode": "raw",
+<<<<<<< HEAD
 									"raw": "{\r\n    \"fechaStart\": \"2023-03-27\",\r\n    \"horaStart\": \"07:04:00Z\",\r\n    \"fechaEnd\": \"2023-04-01\",\r\n    \"horaEnd\": \"14:45:00Z\"\r\n}",
+=======
+									"raw": "{\r\n    \"precio\": 120,\r\n    \"hotel\": \"_id\"\r\n}",
+>>>>>>> origin/luis
 									"options": {
 										"raw": {
 											"language": "json"
@@ -618,35 +676,57 @@
 									}
 								},
 								"url": {
+<<<<<<< HEAD
 									"raw": "localhost:8080/api/reservaciones/agregar/642247cf24523e249c929926",
+=======
+									"raw": "localhost:8080/api/habitaciones/agregar",
+>>>>>>> origin/luis
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
+<<<<<<< HEAD
 										"reservaciones",
 										"agregar",
 										"642247cf24523e249c929926"
+=======
+										"habitaciones",
+										"agregar"
+>>>>>>> origin/luis
 									]
 								}
 							},
 							"response": []
 						},
 						{
+<<<<<<< HEAD
 							"name": "Editar reservacion",
+=======
+							"name": "PUT Habitacion",
+>>>>>>> origin/luis
 							"request": {
 								"method": "PUT",
 								"header": [
 									{
 										"key": "x-token",
+<<<<<<< HEAD
 										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY4MDEzNzA5OCwiZXhwIjoxNjgwMTUxNDk4fQ.M7H9rgxOSBWEDGErz8NhuF26SKRUqRYlYoSlGtNSkNk",
 										"type": "text"
+=======
+										"value": "",
+										"type": "default"
+>>>>>>> origin/luis
 									}
 								],
 								"body": {
 									"mode": "raw",
+<<<<<<< HEAD
 									"raw": "{\r\n    \"fechaStart\": \"2023-03-29\",\r\n    \"horaStart\": \"07:30:00Z\",\r\n    \"fechaEnd\": \"2023-04-05\",\r\n    \"horaEnd\": \"14:50:00Z\"\r\n}",
+=======
+									"raw": "{\r\n    \"precio\": 117\r\n}",
+>>>>>>> origin/luis
 									"options": {
 										"raw": {
 											"language": "json"
@@ -654,40 +734,64 @@
 									}
 								},
 								"url": {
+<<<<<<< HEAD
 									"raw": "localhost:8080/api/reservaciones/editar/6424dba5395124ff4a81cd45",
+=======
+									"raw": "localhost:8080/api/habitaciones/editar/_id",
+>>>>>>> origin/luis
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
+<<<<<<< HEAD
 										"reservaciones",
 										"editar",
 										"6424dba5395124ff4a81cd45"
+=======
+										"habitaciones",
+										"editar",
+										"_id"
+>>>>>>> origin/luis
 									]
 								}
 							},
 							"response": []
 						},
 						{
+<<<<<<< HEAD
 							"name": "Eliminar habitacion",
+=======
+							"name": "DELETE Habitacion",
+>>>>>>> origin/luis
 							"request": {
 								"method": "DELETE",
 								"header": [
 									{
 										"key": "x-token",
+<<<<<<< HEAD
 										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNDdhMzI0NTIzZTI0OWM5Mjk5MWMiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY4MDEzNzA5OCwiZXhwIjoxNjgwMTUxNDk4fQ.M7H9rgxOSBWEDGErz8NhuF26SKRUqRYlYoSlGtNSkNk",
 										"type": "text"
 									}
 								],
 								"url": {
 									"raw": "localhost:8080/api/reservaciones/eliminar/habitacion/642247ca24523e249c929923",
+=======
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/habitaciones/eliminar/_id",
+>>>>>>> origin/luis
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
+<<<<<<< HEAD
 										"reservaciones",
 										"eliminar",
 										"habitacion",
@@ -719,6 +823,11 @@
 										"reservaciones",
 										"eliminar",
 										"6424dba5395124ff4a81cd45"
+=======
+										"habitaciones",
+										"eliminar",
+										"_id"
+>>>>>>> origin/luis
 									]
 								}
 							},
@@ -727,6 +836,7 @@
 					]
 				},
 				{
+<<<<<<< HEAD
 					"name": "Agregar habitacion",
 					"request": {
 						"method": "POST",
@@ -760,6 +870,161 @@
 						}
 					},
 					"response": []
+=======
+					"name": "Hoteles",
+					"item": [
+						{
+							"name": "GET Hoteles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/hoteles/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Hoteles By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/hoteles/_id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										"_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Hotel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Hotel Linux\",\r\n    \"departamento\": \"_id\",\r\n    \"direccion\": \"Zona 5\",\r\n    \"nit\": \"456465456\",\r\n    \"rating\": \"4\",\r\n    \"eventos\": [\r\n        \"_id\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/hoteles/agregar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										"agregar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Hotel",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Hotel Windows\",\r\n    \"departamento\": \"_id\",\r\n    \"direccion\": \"Zona 5\",\r\n    \"nit\": \"55555555555\",\r\n    \"rating\": \"6\",\r\n    \"eventos\": [\r\n        \"_id\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/hoteles/editar/_id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										"editar",
+										"_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Hotel",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/hoteles/eliminar/_id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										"eliminar",
+										"_id"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+>>>>>>> origin/luis
 				}
 			]
 		},
@@ -770,7 +1035,11 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
+<<<<<<< HEAD
 					"raw": "{\r\n    \"correo\": \"lperez@corrreo.com\",\r\n    \"password\": \"123456\"\r\n}",
+=======
+					"raw": "{\r\n    \"correo\": \"msalvatierra@corrreo.com\",\r\n    \"password\": \"123456\"\r\n}",
+>>>>>>> origin/luis
 					"options": {
 						"raw": {
 							"language": "json"
