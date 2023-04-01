@@ -1,7 +1,7 @@
 const Role = require('../models/role');
 const Usuario = require('../models/usuario');
 const Habitacion = require('../models/habitacion')
-const Servicios = require('../models/server');
+const Servicios = require('../models/servicios');
 const Evento = require('../models/evento');
 const Departamento =require('../models/departamento-nombre');
 const Hotel = require('../models/hotel');
