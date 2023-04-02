@@ -55,7 +55,7 @@ const putDepartamentoNombre = async (req = request, res = response) => {
 
 const deleteDepartamentoNombre = async(req = request, res = response) => {
     const { id } = req.params;
-     const DepartamentoNombreEliminado = await DepartamentoNombre.findByIdAndUpdate(id, { estado: false });
+    const DepartamentoNombreEliminado = await DepartamentoNombre.findByIdAndDelete(id);
 
     res.json({
         msg: 'DELETE eliminar DepartamentoNombre',
