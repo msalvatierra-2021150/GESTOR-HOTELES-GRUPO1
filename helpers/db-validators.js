@@ -80,14 +80,14 @@ const existeRolPorId = async(id) => {
         throw new Error(`El rol ${ id } ya existe en la DB`);
     }
 }
-/*
+
 const existeHabitacionById = async (id) => {
     const existeHabitacion = await Habitacion.findById(id);
     if (!existeHabitacion) {
         throw new Error(`La habitacion con el codigo: ${id}, no existe en la BD`);
     }
     return existeHabitacion;
-}*/
+}
 
 const existeDepartamento = async( nombre = '' ) => {
 
@@ -97,15 +97,6 @@ const existeDepartamento = async( nombre = '' ) => {
     //Si existe (es true) lanzamos excepción
     if ( existeDepartamento ) {
         throw new Error(`El correo: ${ nombre } ya existe y esta registrado en la DB`);
-    }
-}
-
-const existeHabitacionById = async(id = '') => {
-    
-    const existeHabitacion = await Habitacion.findById(id);
-
-    if ( !existeHabitacion ) {
-        throw new Error(`La habitación no existe en la DB`);
     }
 }
 
