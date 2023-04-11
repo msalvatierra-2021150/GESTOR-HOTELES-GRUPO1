@@ -1069,7 +1069,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"nombre\":\"perez\"\r\n}",
+											"raw": "{\r\n    \"nombre\":\"Peten\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
