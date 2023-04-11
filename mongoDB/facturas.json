@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "642cd5761e6664432ded18c9"
+  },
+  "NITEmisor": "1234567-8",
+  "usuario": {
+    "$oid": "641e8631f3251766b3b74281"
+  },
+  "NITReceptor": "09123476-2",
+  "cart_reservaciones": [
+    {
+      "itemId": "642c91a104596d9be8bfceb1",
+      "quantity": 1,
+      "precio": 3000
+    }
+  ],
+  "cart_servicios": [
+    {
+      "itemId": "642b223440345e733f3cdb7d",
+      "quantity": 2,
+      "nombreServicio": "Arroz",
+      "precio": 12,
+      "nombre": "Arroz"
+    }
+  ],
+  "total": 3024,
+  "fecha": {
+    "$date": "2023-04-05T01:57:10.061Z"
+  },
+  "__v": 0
+}]

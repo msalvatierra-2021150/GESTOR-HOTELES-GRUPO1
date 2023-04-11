@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "641e8631f3251766b3b74281"
+  },
+  "nombre": "Steven Penate",
+  "correo": "msalvatierra@corrreo.com",
+  "password": "$2a$10$i7qPI45B32chIn7IWKMl/ONdm8wICz9x3JR83O9z7y0F/k27QyZdS",
+  "rol": "ADMIN_APP",
+  "estado": true,
+  "google": false,
+  "__v": 0,
+  "cart_servicios": [
+    {
+      "itemId": "642b223440345e733f3cdb7d",
+      "quantity": 2,
+      "nombreServicio": "Arroz",
+      "precio": 12,
+      "nombre": "Arroz"
+    }
+  ],
+  "cart_reservaciones": [
+    {
+      "itemId": "642c91a104596d9be8bfceb1",
+      "quantity": 1,
+      "precio": 3000
+    }
+  ]
+}]

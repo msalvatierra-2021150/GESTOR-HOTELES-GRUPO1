@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "642b223440345e733f3cdb7d"
+  },
+  "nombreServicio": "Arroz",
+  "descripcion": "para el deseo de el invierno en navidad",
+  "precio": 12,
+  "estado": true,
+  "__v": 0
+}]
