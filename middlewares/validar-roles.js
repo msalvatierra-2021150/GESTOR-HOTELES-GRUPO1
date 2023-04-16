@@ -85,8 +85,6 @@ const NoEsAdminRole = (req = request, res = response, next) => {
 
 }
 
-
-//Operador rest u operador spread 
 const tieneRole = ( ...roles ) => {
 
     return (req = request, res= response, next) => {

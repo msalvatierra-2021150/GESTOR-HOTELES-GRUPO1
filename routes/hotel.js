@@ -6,6 +6,7 @@ const { validarJWT } = require('../middlewares/validar-jwt');
 const { existeHotelById } = require('../helpers/db-validators');
 
 const { getHoteles, getHotelById, postHotel, putHotel, deleteHotel } = require('../controllers/hotel');
+const { esAdminHotelRole, esAdminAppRole } = require('../middlewares/validar-roles');
 
 const router = Router();
 
@@ -32,6 +33,8 @@ router.post('/agregar',  [
     check('rating', 'El rating debe ser un dígito menor a 6').isInt({ min: 0, max: 5 }),
     check('nit', 'El nit es obligatorio').not().isEmpty(),
     validarJWT,
+    esAdminAppRole,
+    //esAdminHotelRole,
     validarCampos
 ], postHotel);
 
@@ -44,6 +47,8 @@ router.put('/editar/:id', [
     check('nit', 'El nit es obligatorio').not().isEmpty(),
     check('id').custom(existeHotelById),
     validarJWT,
+    esAdminAppRole,
+    //esAdminHotelRole,
     validarCampos
 ], putHotel);
 
@@ -52,6 +57,8 @@ router.delete('/eliminar/:id', [
     check('id', 'No es un id valido').isMongoId(),
     check('id').custom(existeHotelById),
     validarJWT,
+    esAdminAppRole,
+    //esAdminHotelRole,
     validarCampos
 ], deleteHotel);
 

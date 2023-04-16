@@ -11,13 +11,14 @@ class Server {
         this.port = process.env.PORT;
 
         this.paths = {
-            auth:    '/api/auth',
+            auth:       '/api/auth',
             adminApp:   '/api/admin',
-            cliente: '/api/clientes',
-            roles: '/api/roles',
-            adminHotel:   '/api/adminHotel',
+            cliente:    '/api/clientes',
+            roles:      '/api/roles',
+            adminHotel: '/api/adminHotel',
             habitaciones: '/api/habitaciones',
-            hoteles: '/api/hoteles'
+            hoteles:    '/api/hoteles',
+            buscar:'/api/buscar/'
         }
 
 
@@ -60,6 +61,7 @@ class Server {
         this.app.use(this.paths.adminHotel, require('../routes/adminHotel'));
         this.app.use(this.paths.habitaciones, require('../routes/habitacion'));
         this.app.use(this.paths.hoteles, require('../routes/hotel'));
+        this.app.use(this.paths.buscar , require('../routes/buscar'));
     }
 
 

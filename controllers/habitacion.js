@@ -42,8 +42,27 @@ const getHabitacionById = async (req = request, res = response) => {
 
 }
 
+//------------------------------READ habitaciones BY Hotel-------------------------------------
+const getHabitacionesByHotel = async (req = request, res = response) => {
+
+    const { id } = req.params;
+
+    const query = { hotel: id };
+
+    const listaHabitacionesHotel = await Promise.all([
+        Habitacion.countDocuments(query),
+        Habitacion.find(query).populate('usuario', 'nombre').populate('hotel', 'nombre')
+    ]);
+
+    res.json({
+        msg: 'GET API - Controlador habitacion',
+        listaHabitacionesHotel
+    });
+
+}
+
 //------------------------------CREATE habitacion-------------------------------------
-const postHabitacion = async ( req = request, res = response ) => {
+const postHabitacion = async (req = request, res = response) => {
 
     const { ...resto } = req.body;
 
@@ -71,7 +90,7 @@ const putHabitacion = async (req = request, res = response) => {
     const { hotel, ...resto } = req.body;
 
     const habitacionEditada = await Habitacion.findByIdAndUpdate(id, resto, { new: true });
-    
+
     res.status(201).json({
         msg: 'PUT API - Controlador habitacion',
         habitacionEditada
@@ -102,6 +121,7 @@ const deleteHabitacion = async (req = request, res = response) => {
 module.exports = {
     getHabitaciones,
     getHabitacionById,
+    getHabitacionesByHotel,
     postHabitacion,
     putHabitacion,
     deleteHabitacion

@@ -5,7 +5,9 @@ const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
 const { existeHabitacionById } = require('../helpers/db-validators');
 
-const { getHabitaciones, getHabitacionById, postHabitacion, putHabitacion, deleteHabitacion } = require('../controllers/habitacion');
+const { getHabitaciones, getHabitacionById, postHabitacion, putHabitacion,
+    deleteHabitacion, getHabitacionesByHotel } = require('../controllers/habitacion');
+const { esAdminHotelRole, esAdminAppRole } = require('../middlewares/validar-roles');
 
 const router = Router();
 
@@ -13,37 +15,51 @@ const router = Router();
 router.get('/', [
     validarJWT,
     validarCampos
-],getHabitaciones);
+], getHabitaciones);
 
 //------------------------------READ by ID route---------------------------------
 router.get('/:id', [
     check('id', 'No es un id valido').isMongoId(),
     validarJWT,
     validarCampos
-],getHabitacionById);
+], getHabitacionById);
 
-//------------------------------POST route---------------------------------
-router.post('/agregar',  [
-    check('hotel', 'No es un id valido').isMongoId(),
+//------------------------------READ by Hotel route---------------------------------
+router.get('/hotel/:id', [
+    check('id', 'No es un id valido').isMongoId(),
     validarJWT,
     validarCampos
-],postHabitacion);
+], getHabitacionesByHotel);
+
+//------------------------------POST route---------------------------------
+router.post('/agregar', [
+    check('hotel', 'No es un id valido').isMongoId(),
+    //check('rol').custom(esAdminAppRole),
+    validarJWT,
+    validarCampos,
+    //esAdminAppRole,
+    esAdminHotelRole
+], postHabitacion);
 
 //------------------------------PUT route---------------------------------
 router.put('/editar/:id', [
     check('id', 'No es un id valido').isMongoId(),
     check('id').custom(existeHabitacionById),
     validarJWT,
+    //esAdminAppRole,
+    esAdminHotelRole,
     validarCampos
-],putHabitacion);
+], putHabitacion);
 
 //------------------------------DELETE route---------------------------------
 router.delete('/eliminar/:id', [
     check('id', 'No es un id valido').isMongoId(),
     check('id').custom(existeHabitacionById),
     validarJWT,
+    //esAdminAppRole,
+    esAdminHotelRole,
     validarCampos
-],deleteHabitacion);
+], deleteHabitacion);
 
 //------------------------------Exportacion-------------------------------------------
 module.exports = router;

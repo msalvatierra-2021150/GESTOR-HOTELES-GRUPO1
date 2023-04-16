@@ -3,7 +3,7 @@ const { request, response } = require('express')
 // Modelo
 const Hotel = require('../models/hotel');
 
-//------------------------------READ habitaciones-------------------------------------
+//------------------------------READ hoteles-------------------------------------
 const getHoteles = async (req = request, res = response) => {
 
     const listaHoteles = await Promise.all([
@@ -21,7 +21,7 @@ const getHoteles = async (req = request, res = response) => {
 
 }
 
-//------------------------------READ by ID habitacion---------------------------------
+//------------------------------READ by ID hotele---------------------------------
 const getHotelById = async (req = request, res = response) => {
 
     const { id } = req.params;
@@ -39,7 +39,7 @@ const getHotelById = async (req = request, res = response) => {
 
 }
 
-//------------------------------CREATE habitacion-------------------------------------
+//------------------------------CREATE hotele-------------------------------------
 const postHotel = async (req = request, res = response) => {
 
     const { usuario, ...resto } = req.body;
@@ -60,7 +60,7 @@ const postHotel = async (req = request, res = response) => {
 
 }
 
-//------------------------------UPDATE habitaciones-----------------------------------
+//------------------------------UPDATE hotele-----------------------------------
 const putHotel = async (req = request, res = response) => {
 
     const { id } = req.params;
@@ -76,7 +76,7 @@ const putHotel = async (req = request, res = response) => {
 
 }
 
-//------------------------------DELETE habitacion-------------------------------------
+//------------------------------DELETE hotele-------------------------------------
 const deleteHotel = async (req = request, res = response) => {
 
     const { id } = req.params;
