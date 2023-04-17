@@ -27,6 +27,7 @@ class Server {
             carritoServicios:    '/api/cartServicios',
             carritoReservaciones:    '/api/cartReservaciones',
             factura: '/api/facturas',
+            buscar:'/api/buscar/'
         }
 
 
@@ -78,6 +79,7 @@ class Server {
         this.app.use(this.paths.carritoServicios, require('../routes/cartServicios'));
         this.app.use(this.paths.carritoReservaciones, require('../routes/cartReservaciones'));
         this.app.use(this.paths.factura, require('../routes/factura')); 
+        this.app.use(this.paths.buscar , require('../routes/buscar'));
     }
 
 

@@ -3,7 +3,6 @@ const { request, response } = require('express')
 // Modelo
 const Habitacion = require('../models/habitacion');
 const Hotel = require('../models/hotel');
-
 //------------------------------READ habitaciones-------------------------------------
 const getHabitaciones = async (req = request, res = response) => {
 
@@ -83,6 +82,24 @@ const getHabitacionesActivas = async (req = request, res = response) => {
     }
 }
 
+//------------------------------READ habitaciones BY Hotel-------------------------------------
+const getHabitacionesByHotel = async (req = request, res = response) => {
+
+    const { id } = req.params;
+
+    const query = { hotel: id };
+
+    const listaHabitacionesHotel = await Promise.all([
+        Habitacion.countDocuments(query),
+        Habitacion.find(query).populate('usuario', 'nombre').populate('hotel', 'nombre')
+    ]);
+
+    res.json({
+        msg: 'GET API - Controlador habitacion',
+        listaHabitacionesHotel
+    });
+}
+
 //------------------------------CREATE habitacion-------------------------------------
 const postHabitacion = async (req = request, res = response) => {
 
@@ -139,6 +156,7 @@ module.exports = {
     getHabitaciones,
     getHabitacionById,
     getHabitacionesActivas,
+    getHabitacionesByHotel,
     postHabitacion,
     putHabitacion,
     deleteHabitacion

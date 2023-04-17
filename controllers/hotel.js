@@ -3,12 +3,13 @@ const { request, response } = require('express')
 // Modelo
 const Hotel = require('../models/hotel');
 
-//------------------------------READ habitaciones-------------------------------------
+//------------------------------READ hoteles-------------------------------------
+>>>>>>> origin/luis
 const getHoteles = async (req = request, res = response) => {
 
     const listaHoteles = await Promise.all([
         Hotel.countDocuments({}),
-        Hotel.find({}).populate('usuario', 'nombre').populate('departamento', 'nombre')
+        Hotel.find({}).populate('usuario', 'nombre')
             // Ordenando en base al rating (mayor rating aparece al inicio)
             .sort({ rating: -1 })
     ]);
@@ -20,7 +21,7 @@ const getHoteles = async (req = request, res = response) => {
 
 }
 
-//------------------------------READ by ID habitacion---------------------------------
+//------------------------------READ by ID hotele---------------------------------
 const getHotelById = async (req = request, res = response) => {
 
     const { id } = req.params;
@@ -38,7 +39,7 @@ const getHotelById = async (req = request, res = response) => {
 
 }
 
-//------------------------------CREATE habitacion-------------------------------------
+//------------------------------CREATE hoteles-------------------------------------
 const postHotel = async (req = request, res = response) => {
 
     const { usuario, ...resto } = req.body;
@@ -59,7 +60,7 @@ const postHotel = async (req = request, res = response) => {
 
 }
 
-//------------------------------UPDATE habitaciones-----------------------------------
+//------------------------------UPDATE hoteles-----------------------------------
 const putHotel = async (req = request, res = response) => {
 
     const { id } = req.params;
@@ -74,8 +75,7 @@ const putHotel = async (req = request, res = response) => {
     });
 
 }
-
-//------------------------------DELETE habitacion-------------------------------------
+//------------------------------DELETE hoteles-------------------------------------
 const deleteHotel = async (req = request, res = response) => {
 
     const { id } = req.params;

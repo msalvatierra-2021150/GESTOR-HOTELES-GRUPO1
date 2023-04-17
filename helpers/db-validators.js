@@ -8,6 +8,7 @@ const Hotel = require('../models/hotel');
 const Reservacion = require('../models/reservacion');
 const Factura = require('../models/factura');
 
+
 //Este archivo maneja validaciones personalizadas
 
 const esRoleValido = async( rol = '' ) => {
@@ -38,7 +39,6 @@ const existeEvento = async( nombreEvento = '' ) => {
     }
 
 }
-
 
 const emailExiste = async( correo = '' ) => {
 
@@ -132,7 +132,6 @@ const existeReservacionById = async(id) => {
     }
 
 }
-
 
 module.exports = {
     esRoleValido,
