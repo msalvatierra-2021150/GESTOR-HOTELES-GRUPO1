@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "6439dc9baa78c7b4dd4c5759"
+  },
+  "precio": 120,
+  "descripcion": "Habitación de hotel",
+  "capacidad": 1,
+  "hotel": {
+    "$oid": "643ae2a32a212766d42bd37e"
+  },
+  "disponible": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6439dcb3aa78c7b4dd4c575c"
+  },
+  "precio": 120,
+  "descripcion": "Habitación de hotel",
+  "capacidad": 1,
+  "hotel": {
+    "$oid": "643ae2a32a212766d42bd37e"
+  },
+  "disponible": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6439dcb4aa78c7b4dd4c575f"
+  },
+  "precio": 120,
+  "descripcion": "Habitación de hotel",
+  "capacidad": 1,
+  "hotel": {
+    "$oid": "643ae2a32a212766d42bd37e"
+  },
+  "disponible": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6439dcb5aa78c7b4dd4c5762"
+  },
+  "precio": 120,
+  "descripcion": "Habitación de hotel",
+  "capacidad": 1,
+  "hotel": {
+    "$oid": "643ae2a32a212766d42bd37e"
+  },
+  "disponible": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6439dcb6aa78c7b4dd4c5765"
+  },
+  "precio": 120,
+  "descripcion": "Habitación de hotel",
+  "capacidad": 1,
+  "hotel": {
+    "$oid": "643ae2a32a212766d42bd37e"
+  },
+  "disponible": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643a082976a64e91981147eb"
+  },
+  "precio": 120,
+  "descripcion": "Habitación de Barcelo",
+  "capacidad": 1,
+  "hotel": {
+    "$oid": "643a07f276a64e91981147e7"
+  },
+  "disponible": true,
+  "__v": 0
+}]

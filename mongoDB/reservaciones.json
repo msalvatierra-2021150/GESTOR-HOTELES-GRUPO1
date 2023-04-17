@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "643a13dcc0ed5a2b2a6ed25f"
+  },
+  "usuario": {
+    "$oid": "6439e17e0588c43aa6a84e1b"
+  },
+  "fechaInicio": {
+    "$date": "2023-03-27T07:04:00.000Z"
+  },
+  "fechaFin": {
+    "$date": "2023-04-01T14:45:00.000Z"
+  },
+  "habitaciones": [
+    {
+      "habitacion_id": "6439dc9baa78c7b4dd4c5759",
+      "precio": 120
+    },
+    {
+      "habitacion_id": "6439dcb3aa78c7b4dd4c575c",
+      "precio": 120
+    },
+    {
+      "habitacion_id": "6439dcb4aa78c7b4dd4c575f",
+      "precio": 120
+    }
+  ],
+  "total": 360,
+  "estado": true,
+  "__v": 2
+},{
+  "_id": {
+    "$oid": "643ae3da81ec4b7897cbbbe3"
+  },
+  "usuario": {
+    "$oid": "6439e17e0588c43aa6a84e1b"
+  },
+  "fechaInicio": {
+    "$date": "2023-03-27T07:04:00.000Z"
+  },
+  "fechaFin": {
+    "$date": "2023-04-01T14:45:00.000Z"
+  },
+  "habitaciones": [
+    {
+      "habitacion_id": "643a082976a64e91981147eb",
+      "precio": 120
+    }
+  ],
+  "total": 120,
+  "estado": true,
+  "__v": 2
+},{
+  "_id": {
+    "$oid": "643b10738fd65891c86393ed"
+  },
+  "usuario": {
+    "$oid": "643b102a8fd65891c86393e3"
+  },
+  "fechaInicio": {
+    "$date": "2023-03-27T07:04:00.000Z"
+  },
+  "fechaFin": {
+    "$date": "2023-04-01T14:45:00.000Z"
+  },
+  "habitaciones": [
+    {
+      "habitacion_id": "6439dcb6aa78c7b4dd4c5765",
+      "precio": 120
+    }
+  ],
+  "total": 120,
+  "estado": true,
+  "__v": 0
+}]
