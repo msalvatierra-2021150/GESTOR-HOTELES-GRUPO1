@@ -21,11 +21,6 @@ const HabitacionSchema = Schema({
         ref: 'Hotel',
         required: true
     },
-    usuario: {
-        type: Schema.Types.ObjectId,
-        ref: 'Usuario',
-        required: true
-    },
     disponible: {
         type: Boolean,
         default: true

@@ -4,8 +4,8 @@ const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
 const { existeHabitacionById } = require('../helpers/db-validators');
-
-const { getHabitaciones, getHabitacionById, postHabitacion, putHabitacion, deleteHabitacion } = require('../controllers/habitacion');
+const { getHabitaciones, getHabitacionById, postHabitacion, putHabitacion, deleteHabitacion, getHabitacionesActivas } = require('../controllers/habitacion');
+const { tieneRole } = require('../middlewares/validar-roles');
 
 const router = Router();
 
@@ -21,6 +21,13 @@ router.get('/:id', [
     validarJWT,
     validarCampos
 ],getHabitacionById);
+
+//------------------------------READ habitaciones disponibles route---------------------------------
+router.get('/activas/disponibles', [
+    validarJWT,
+    tieneRole('ADMIN_HOTEL'),
+    validarCampos
+],getHabitacionesActivas);
 
 //------------------------------POST route---------------------------------
 router.post('/agregar',  [

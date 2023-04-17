@@ -8,8 +8,7 @@ const getHoteles = async (req = request, res = response) => {
 
     const listaHoteles = await Promise.all([
         Hotel.countDocuments({}),
-
-        Hotel.find({}).populate('usuario', 'nombre')
+        Hotel.find({}).populate('usuario', 'nombre').populate('departamento', 'nombre')
             // Ordenando en base al rating (mayor rating aparece al inicio)
             .sort({ rating: -1 })
     ]);

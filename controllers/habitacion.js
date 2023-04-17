@@ -2,6 +2,7 @@
 const { request, response } = require('express')
 // Modelo
 const Habitacion = require('../models/habitacion');
+const Hotel = require('../models/hotel');
 
 //------------------------------READ habitaciones-------------------------------------
 const getHabitaciones = async (req = request, res = response) => {
@@ -10,8 +11,7 @@ const getHabitaciones = async (req = request, res = response) => {
 
     const listaHabitaciones = await Promise.all([
         Habitacion.countDocuments(query),
-        Habitacion.find(query).populate('usuario', 'nombre'),
-        //Habitacion.find(query).populate('usuario', 'nombre').populate('hotel', 'nombre')
+        Habitacion.find(query).populate('hotel', 'nombre')
     ]);
 
     res.json({
@@ -43,17 +43,52 @@ const getHabitacionById = async (req = request, res = response) => {
 
 }
 
+//------------------------------READ by ID habitacion---------------------------------
+const getHabitacionesActivas = async (req = request, res = response) => {
+    //Condiciones del get, devuelve todas las reservaciones realizadas
+    const query = { disponible: true };
+    const hotelAdminBD = await Hotel.find({ usuario: req.usuario._id }).lean();
+    const habitacionesDB = await Habitacion.find(query).lean();
+
+    if (hotelAdminBD.length === 0) {
+        return res.status(400).json({
+            msg: "No se encontró ningún hotel para el usuario administrador proporcionado.",
+        });
+    }
+
+    const matchs = [];
+    //Nos posicionamos en el arreglo de hoteles
+    for (let k = 0; k < hotelAdminBD.length; k++) {
+        const hotelAdmin = hotelAdminBD[k];
+        //Se recorre el arreglo de reservaciones
+        for (let j = 0; j < habitacionesDB.length; j++) {
+            const habitaciones = habitacionesDB[j];
+            //Buscar las habitaciones que estan en el arreglo segun su id
+            const hotelHabitacionClient = await Hotel.findById(habitaciones.hotel).lean();
+            if (!hotelHabitacionClient) {
+                return res.status(400).json({ msg: 'No se encontró el hotel de la habitación.' });
+            }
+            if (hotelHabitacionClient._id.toString() === hotelAdmin._id.toString()) {
+                matchs.push(habitaciones);
+            }
+        }
+    }
+    //Devolvemos las reservaciones si todo ha ido bien
+    if (matchs.length === 0) {
+        return res.status(400).json({
+            msg: "El usuario cliente proporcionado, no tiene ninguna habitacion activa en sus hoteles.",
+        });
+    } else {
+        return res.json({ habitacionesActivas: matchs });
+    }
+}
+
 //------------------------------CREATE habitacion-------------------------------------
-const postHabitacion = async ( req = request, res = response ) => {
+const postHabitacion = async (req = request, res = response) => {
 
     const { ...resto } = req.body;
 
-    const data = {
-        ...resto,
-        usuario: req.usuario._id
-    }
-
-    const habitacionDb = await Habitacion(data);
+    const habitacionDb = await Habitacion(resto);
 
     await habitacionDb.save();
 
@@ -72,7 +107,7 @@ const putHabitacion = async (req = request, res = response) => {
     const { hotel, ...resto } = req.body;
 
     const habitacionEditada = await Habitacion.findByIdAndUpdate(id, resto, { new: true });
-    
+
     res.status(201).json({
         msg: 'PUT API - Controlador habitacion',
         habitacionEditada
@@ -103,6 +138,7 @@ const deleteHabitacion = async (req = request, res = response) => {
 module.exports = {
     getHabitaciones,
     getHabitacionById,
+    getHabitacionesActivas,
     postHabitacion,
     putHabitacion,
     deleteHabitacion

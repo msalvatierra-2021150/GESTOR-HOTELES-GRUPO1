@@ -12,7 +12,7 @@ const HotelSchema = Schema({
     },
     departamento: {
         type: Schema.Types.ObjectId,
-        ref: 'Departamento',
+        ref: 'DepartamentoNombre',
         required: true
     },
     nit: {

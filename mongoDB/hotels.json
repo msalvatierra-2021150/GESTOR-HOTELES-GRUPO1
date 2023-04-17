@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "643a07f276a64e91981147e7"
+  },
+  "nombre": "Barcelo",
+  "direccion": "Zona 4",
+  "departamento": {
+    "$oid": "64376d93d1813dc816a78be9"
+  },
+  "nit": "456465456",
+  "rating": 4,
+  "numero_reservaciones": 0,
+  "img": "N/A",
+  "descripcion": "Hotel",
+  "usuario": {
+    "$oid": "642dd84fb7dd050b4ffdf77c"
+  },
+  "eventos": [
+    {
+      "$oid": "64376fa60cd3295c3874ffaf"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643ae2a32a212766d42bd37e"
+  },
+  "nombre": "Hotel Linux",
+  "direccion": "Zona 5",
+  "departamento": {
+    "$oid": "64376d93d1813dc816a78be9"
+  },
+  "nit": "456465456",
+  "rating": 4,
+  "numero_reservaciones": 0,
+  "img": "N/A",
+  "descripcion": "Hotel by in6bm",
+  "usuario": {
+    "$oid": "642dd84fb7dd050b4ffdf77c"
+  },
+  "eventos": [
+    {
+      "$oid": "64376fa60cd3295c3874ffaf"
+    }
+  ],
+  "__v": 0
+}]

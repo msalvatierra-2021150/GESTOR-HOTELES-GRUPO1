@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f7feb043-3702-475d-ad58-4ffe6518b140",
-		"name": "PROYECTO GESTOR HOTELES G1",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "4c69c131-8d03-40e9-ad9a-ed863f1670cf",
+		"name": "PROYECTO GESTOR HOTELES G1 Copy 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25706485"
 	},
 	"item": [
 		{
@@ -1069,7 +1070,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"nombre\":\"perez\"\r\n}",
+											"raw": "{\r\n    \"nombre\":\"Peten\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1161,7 +1162,7 @@
 								"header": [
 									{
 										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDU3NDMwMSwiZXhwIjoxNjgwNTg4NzAxfQ.vuQrWdDffhDV3UqtxI_3csQoKvShXUtN-MZrZHJsz-Y",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDJkZDg0ZmI3ZGQwNTBiNGZmZGY3N2MiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MTU5MjE5NywiZXhwIjoxNjgxNjA2NTk3fQ.lkVUXgajvWx8LuObXD3HGBOhXanQeKqPijkaBZbaogc",
 										"type": "text"
 									}
 								],
@@ -1182,17 +1183,29 @@
 						},
 						{
 							"name": "Reservaciones activas client",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "x-token",
-										"value": "",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDJkZDg0ZmI3ZGQwNTBiNGZmZGY3N2MiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MTU3NTc3NCwiZXhwIjoxNjgxNTkwMTc0fQ.6hhaJ0wZ1o2vovdZXYKkvuVFG_Pyb8pkOto0gbJdQJY",
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"6439e17e0588c43aa6a84e1b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "localhost:8080/api/reservaciones/reservacion",
+									"raw": "localhost:8080/api/reservaciones/",
 									"host": [
 										"localhost"
 									],
@@ -1200,7 +1213,7 @@
 									"path": [
 										"api",
 										"reservaciones",
-										"reservacion"
+										""
 									]
 								}
 							},
@@ -1249,7 +1262,7 @@
 								"header": [
 									{
 										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDY1ODEyOSwiZXhwIjoxNjgwNjcyNTI5fQ.PN1ver9cbjKR4-U_6PQxowo0y6C724VSfUASzh5Ff64",
+										"value": "",
 										"type": "text"
 									}
 								],
@@ -1263,7 +1276,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8080/api/reservaciones/agregar/642247d224523e249c929929",
+									"raw": "localhost:8080/api/reservaciones/agregar/6439dcb3aa78c7b4dd4c575c",
 									"host": [
 										"localhost"
 									],
@@ -1272,7 +1285,7 @@
 										"api",
 										"reservaciones",
 										"agregar",
-										"642247d224523e249c929929"
+										"6439dcb3aa78c7b4dd4c575c"
 									]
 								}
 							},
@@ -1476,19 +1489,46 @@
 							"response": []
 						},
 						{
+							"name": "GET Habitaciones activas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDJkZDg0ZmI3ZGQwNTBiNGZmZGY3N2MiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MTU5MzI2MywiZXhwIjoxNjgxNjA3NjYzfQ.DiRQ35xnGxxZzV_obPcoOoaA1ieZas1_MkHEhh2SRaM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/habitaciones/activas/disponibles",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"habitaciones",
+										"activas",
+										"disponibles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "POST Habitacion",
 							"request": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "x-token",
-										"value": "",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDJkZDg0ZmI3ZGQwNTBiNGZmZGY3N2MiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MTU5MzI2MywiZXhwIjoxNjgxNjA3NjYzfQ.DiRQ35xnGxxZzV_obPcoOoaA1ieZas1_MkHEhh2SRaM",
 										"type": "default"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"precio\": 120,\r\n    \"hotel\": \"_id\"\r\n}",
+									"raw": "{\r\n    \"precio\": 120,\r\n    \"hotel\": \"643a07f276a64e91981147e7\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1517,13 +1557,13 @@
 								"header": [
 									{
 										"key": "x-token",
-										"value": "",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDJkZDg0ZmI3ZGQwNTBiNGZmZGY3N2MiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MTU5MzI2MywiZXhwIjoxNjgxNjA3NjYzfQ.DiRQ35xnGxxZzV_obPcoOoaA1ieZas1_MkHEhh2SRaM",
 										"type": "default"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"precio\": 117\r\n}",
+									"raw": "{\r\n    \"descripcion\": \"YORCH HABITACION\",\r\n    \"precio\": 117\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1531,7 +1571,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8080/api/habitaciones/editar/_id",
+									"raw": "localhost:8080/api/habitaciones/editar/643b13c7431494c22e4945c7",
 									"host": [
 										"localhost"
 									],
@@ -1540,7 +1580,7 @@
 										"api",
 										"habitaciones",
 										"editar",
-										"_id"
+										"643b13c7431494c22e4945c7"
 									]
 								}
 							},
@@ -1553,12 +1593,12 @@
 								"header": [
 									{
 										"key": "x-token",
-										"value": "",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDJkZDg0ZmI3ZGQwNTBiNGZmZGY3N2MiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MTU5MzI2MywiZXhwIjoxNjgxNjA3NjYzfQ.DiRQ35xnGxxZzV_obPcoOoaA1ieZas1_MkHEhh2SRaM",
 										"type": "default"
 									}
 								],
 								"url": {
-									"raw": "localhost:8080/api/habitaciones/eliminar/_id",
+									"raw": "localhost:8080/api/habitaciones/eliminar/643b13c7431494c22e4945c7",
 									"host": [
 										"localhost"
 									],
@@ -1567,7 +1607,7 @@
 										"api",
 										"habitaciones",
 										"eliminar",
-										"_id"
+										"643b13c7431494c22e4945c7"
 									]
 								}
 							},
@@ -1585,7 +1625,7 @@
 								"header": [
 									{
 										"key": "x-token",
-										"value": "",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDM5ZGJmMmJhZmM2Y2VmNDQwYmE4MTYiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6IiIsImlhdCI6MTY4MTUyMTUyMiwiZXhwIjoxNjgxNTM1OTIyfQ.qU5_lK1lFRjHQH9dWA-DjjZ5o_-gRxae2kOSBaNI30Q",
 										"type": "default"
 									}
 								],
@@ -1643,7 +1683,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"nombre\": \"Hotel Linux\",\r\n    \"departamento\": \"_id\",\r\n    \"direccion\": \"Zona 5\",\r\n    \"nit\": \"456465456\",\r\n    \"rating\": \"4\",\r\n    \"eventos\": [\r\n        \"_id\"\r\n    ]\r\n}",
+									"raw": "{\r\n    \"nombre\": \"Hotel Linux\",\r\n    \"departamento\": \"64376d93d1813dc816a78be9\",\r\n    \"direccion\": \"Zona 5\",\r\n    \"nit\": \"456465456\",\r\n    \"rating\": \"4\",\r\n    \"eventos\": [\r\n        \"64376fa60cd3295c3874ffaf\"\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1850,7 +1890,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"nombreServicio\":\"cafe\",\r\n  \"descripcion\":\"de buena calidad\",\r\n  \"precio\":13\r\n} ",
+									"raw": "{\r\n    \"nombreEvento\": \"cafe\",\r\n    \"cantidadUsuarios\": 15,\r\n    \"fechaHoraStart\": \"2023-03-27\",\r\n    \"horaInicio\": \"07:04:00Z\",\r\n    \"fechaHoraEnd\": \"2023-04-01\",\r\n    \"horaFinal\": \"14:45:00Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1858,14 +1898,14 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8080/api/servicios/agregar",
+									"raw": "localhost:8080/api/evento/agregar",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"servicios",
+										"evento",
 										"agregar"
 									]
 								}
