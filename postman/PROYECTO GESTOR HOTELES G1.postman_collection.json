@@ -1,0 +1,2077 @@
+{
+	"info": {
+		"_postman_id": "61263a66-2968-4fb5-bff9-ab673c220440",
+		"name": "PROYECTO GESTOR HOTELES G1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Michael Salvatierra",
+			"item": [
+				{
+					"name": "Usuarios",
+					"item": [
+						{
+							"name": "Admin APP CRUD",
+							"item": [
+								{
+									"name": "POST Agregar Admin APP",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Steven Penate\",\r\n    \"correo\": \"msalvatierra@corrreo.com\",\r\n    \"password\": \"123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/admin/agregar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"admin",
+												"agregar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET Mostrar Admin APP",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODUxMDdkY2VmYmM3ZTllMzAyMTMiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMTc2MywiZXhwIjoxNjc5NzM2MTYzfQ.TpXGS8AK9j2FHGrzHo2uPTapnv1EYOIg-2vZTqRQED4",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/api/admin/mostrar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"admin",
+												"mostrar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PUT Editar Admin APP",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODUxMDdkY2VmYmM3ZTllMzAyMTMiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMTc2MywiZXhwIjoxNjc5NzM2MTYzfQ.TpXGS8AK9j2FHGrzHo2uPTapnv1EYOIg-2vZTqRQED4",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Michael Salvatierra\",\r\n    \"correo\": \"msalvatierra-2021150@corrreo.com\",\r\n    \"password\": \"123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/admin/editar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"admin",
+												"editar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DELETE Eliminar Admin APP",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODUxMDdkY2VmYmM3ZTllMzAyMTMiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMTc2MywiZXhwIjoxNjc5NzM2MTYzfQ.TpXGS8AK9j2FHGrzHo2uPTapnv1EYOIg-2vZTqRQED4",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "localhost:8080/api/admin/eliminar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"admin",
+												"eliminar"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Admin HOTEL CRUD",
+							"item": [
+								{
+									"name": "POST Agregar Admin Hotel",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Luois pere\",\r\n    \"correo\": \"lperez@corrreo.com\",\r\n    \"password\": \"123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/adminHotel/agregar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"adminHotel",
+												"agregar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET Mostrar Admin  Hotel",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlOGE3YjMyODg3YTBkMjVmYjYwMGIiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMzE5OCwiZXhwIjoxNjc5NzM3NTk4fQ.BvWpEwBu4ixw2KteI3eURJlHVVBc93wDINcXFmiYg58",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/api/adminHotel/mostrar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"adminHotel",
+												"mostrar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PUT Editar Admin Hotel",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlOGE3YjMyODg3YTBkMjVmYjYwMGIiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMzE5OCwiZXhwIjoxNjc5NzM3NTk4fQ.BvWpEwBu4ixw2KteI3eURJlHVVBc93wDINcXFmiYg58",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Luis Perez\",\r\n    \"correo\": \"lperez-2021027@corrreo.com\",\r\n    \"password\": \"123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/adminHotel/editar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"adminHotel",
+												"editar"
+											],
+											"query": [
+												{
+													"key": null,
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DELETE Eliminar Admin Hotel",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlOGE3YjMyODg3YTBkMjVmYjYwMGIiLCJub21icmUiOiJMdW9pcyBwZXJlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMzE5OCwiZXhwIjoxNjc5NzM3NTk4fQ.BvWpEwBu4ixw2KteI3eURJlHVVBc93wDINcXFmiYg58",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "localhost:8080/api/adminHotel/eliminar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"adminHotel",
+												"eliminar"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Cliente CRUD Copy",
+							"item": [
+								{
+									"name": "POST Agregar Cliente",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Pedro Hernandez\",\r\n    \"correo\": \"phernandez@corrreo.com\",\r\n    \"password\": \"123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/clientes/agregar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"clientes",
+												"agregar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET Mostrar Cliente",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMjQ4NiwiZXhwIjoxNjc5NzM2ODg2fQ.MWjQAs3u3mlHkf1Sbii-Xu-QpYvXDhhMUGkVlFhiruA",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/api/clientes/mostrar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"clientes",
+												"mostrar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PUT Editar Cliente",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODhlNGE3Njc1ZTAwODc4OTBjMDMiLCJub21icmUiOiJQZWRybyBIZXJuYW5kZXoiLCJjYXJ0IjpbXSwiaWF0IjoxNjc5NzIyNzQyLCJleHAiOjE2Nzk3MzcxNDJ9.ijUxPETlDqvSszGyr9wy4VLPNAYKnuF5pvUEdYcV9OU",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Josue Ambrosio\",\r\n    \"correo\": \"jambrosio@corrreo.com\",\r\n    \"password\": \"123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/clientes/editar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"clientes",
+												"editar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DELETE Eliminar Cliente",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODhlNGE3Njc1ZTAwODc4OTBjMDMiLCJub21icmUiOiJQZWRybyBIZXJuYW5kZXoiLCJjYXJ0IjpbXSwiaWF0IjoxNjc5NzIyNzQyLCJleHAiOjE2Nzk3MzcxNDJ9.ijUxPETlDqvSszGyr9wy4VLPNAYKnuF5pvUEdYcV9OU",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/api/clientes/eliminar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"clientes",
+												"eliminar"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Roles",
+					"item": [
+						{
+							"name": "Roles CRUD",
+							"item": [
+								{
+									"name": "POST Agregar Roles",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMjA4MSwiZXhwIjoxNjc5NzM2NDgxfQ.ZLBG-KUAjl6j7C6tkPN7YGtGqbPcs3JPhQnKiOnW_m0",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"rol\": \"ADMIN_PEPE\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/roles/agregar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"roles",
+												"agregar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET Mostrar Roles",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDA2NDFjMzlhZmFjY2E0NTE2NjI3ZGYiLCJub21icmUiOiJTdGV2ZW4gUmFtaXJleiIsImNhcnQiOltdLCJpYXQiOjE2NzgxMzMxNTgsImV4cCI6MTY3ODE0NzU1OH0.vLvNL8JYuSyriW38-K-7k3UzX4iuSL5ntEBrj0D8c3w",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/api/roles/mostrar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"roles",
+												"mostrar"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": null,
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PUT Editar Roles",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMjI0MSwiZXhwIjoxNjc5NzM2NjQxfQ.BK-bu2GuvUe4W0RM87gC8ZjLjb9EGZoJS9cLlZDJYgo",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"rol\": \"ADMIN_kiki\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/roles/editar/641e8647f3251766b3b74286",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"roles",
+												"editar",
+												"641e8647f3251766b3b74286"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DELETE Eliminar Roles",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "x-token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6W10sImlhdCI6MTY3OTcyMjA4MSwiZXhwIjoxNjc5NzM2NDgxfQ.ZLBG-KUAjl6j7C6tkPN7YGtGqbPcs3JPhQnKiOnW_m0",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "localhost:8080/api/roles/eliminar/641e8647f3251766b3b74286",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"roles",
+												"eliminar",
+												"641e8647f3251766b3b74286"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Factura",
+					"item": [
+						{
+							"name": "GET Mostrar Facturas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6W10sImlhdCI6MTY4MDU0NTk0OCwiZXhwIjoxNjgwNTYwMzQ4fQ.JDFBhcjIRsPXsWVHLWFZBhGrARkQEIA__3oauAGCcRo",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/facturas/mostrar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"facturas",
+										"mostrar"
+									],
+									"query": [
+										{
+											"key": null,
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Agregar Factura",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDY1ODEyOSwiZXhwIjoxNjgwNjcyNTI5fQ.PN1ver9cbjKR4-U_6PQxowo0y6C724VSfUASzh5Ff64",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"NITReceptor\": \"09123476-2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/facturas/agregar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"facturas",
+										"agregar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Editar Factura",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/facturas/editar/afdafaf",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"facturas",
+										"editar",
+										"afdafaf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Eliminar Factura",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDY1ODEyOSwiZXhwIjoxNjgwNjcyNTI5fQ.PN1ver9cbjKR4-U_6PQxowo0y6C724VSfUASzh5Ff64",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/facturas/eliminar/642cd20c6ec189d4233bd46c",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"facturas",
+										"eliminar",
+										"642cd20c6ec189d4233bd46c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Carrito Servicios",
+					"item": [
+						{
+							"name": "PUT EDITAR al Carrito",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDU0ODQ0OCwiZXhwIjoxNjgwNTYyODQ4fQ.e3vUSUT7ZsDpvRHZ7SSYSiHRDbL0NNN9F5am64LiKk0",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/cartServicios/editar/642b223440345e733f3cdb7d",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cartServicios",
+										"editar",
+										"642b223440345e733f3cdb7d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Agregar al Carrito",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDY1ODEyOSwiZXhwIjoxNjgwNjcyNTI5fQ.PN1ver9cbjKR4-U_6PQxowo0y6C724VSfUASzh5Ff64",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/cartServicios/agregar/642b223440345e733f3cdb7d",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cartServicios",
+										"agregar",
+										"642b223440345e733f3cdb7d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Mostrar Carrito",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDU0ODQ0OCwiZXhwIjoxNjgwNTYyODQ4fQ.e3vUSUT7ZsDpvRHZ7SSYSiHRDbL0NNN9F5am64LiKk0",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/cartServicios/mostrar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cartServicios",
+										"mostrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Eliminar del Carrito",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2Y3ZDYxOTAyNzFlNDQ0ODdiYzQ0MWQiLCJub21icmUiOiJTZXJnaW8gQ3J1eiIsImNhcnQiOltdLCJpYXQiOjE2NzcxODY1OTEsImV4cCI6MTY3NzIwMDk5MX0.0wUwbf7J5ll0PFvpozy4Kx_ecztTrG4mA6U8_2UdqR8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/cartServicios/eliminar/63f424b977bbd95a037df470",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cartServicios",
+										"eliminar",
+										"63f424b977bbd95a037df470"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Carrito Reservaciones",
+					"item": [
+						{
+							"name": "PUT EDITAR al Carrito",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDU0ODQ0OCwiZXhwIjoxNjgwNTYyODQ4fQ.e3vUSUT7ZsDpvRHZ7SSYSiHRDbL0NNN9F5am64LiKk0",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/cartReservaciones/editar/64239e54016a01a73827ec9d",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cartReservaciones",
+										"editar",
+										"64239e54016a01a73827ec9d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Agregar al Carrito",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDY1ODEyOSwiZXhwIjoxNjgwNjcyNTI5fQ.PN1ver9cbjKR4-U_6PQxowo0y6C724VSfUASzh5Ff64",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/cartReservaciones/agregar/642c91a104596d9be8bfceb1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cartReservaciones",
+										"agregar",
+										"642c91a104596d9be8bfceb1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Mostrar Carrito",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDU3NDMwMSwiZXhwIjoxNjgwNTg4NzAxfQ.vuQrWdDffhDV3UqtxI_3csQoKvShXUtN-MZrZHJsz-Y",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/cartReservaciones/mostrar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cartReservaciones",
+										"mostrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Eliminar del Carrito",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDU0ODQ0OCwiZXhwIjoxNjgwNTYyODQ4fQ.e3vUSUT7ZsDpvRHZ7SSYSiHRDbL0NNN9F5am64LiKk0",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/cartReservaciones/eliminar/64239e54016a01a73827ec9d",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cartReservaciones",
+										"eliminar",
+										"64239e54016a01a73827ec9d"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Alejandro Ceballos",
+			"item": [
+				{
+					"name": "TipoEvento",
+					"item": [
+						{
+							"name": "VerTipoEvento",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Emilio Jose\",\r\n    \"email\": \"emilio233252345@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/tipoEvento/mostrar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tipoEvento",
+										"mostrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agregar TipoEvento",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIxYjY0MjIyNjY3OTExZjI4ZTI0ZWUiLCJub21icmUiOiJBbGVqYW5kcm8iLCJjYXJ0IjpbXSwiaWF0IjoxNjc5OTMwOTc2LCJleHAiOjE2Nzk5NDUzNzZ9.wreo4fWQI890AS21TkOxwhevUgk1S7frhzzz5FNZjTo",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"XS\",\r\n    \"precio\": 8000.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/tipoevento/agregar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tipoevento",
+										"agregar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Editar TipoEvento",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIxYjY0MjIyNjY3OTExZjI4ZTI0ZWUiLCJub21icmUiOiJBbGVqYW5kcm8iLCJjYXJ0IjpbXSwiaWF0IjoxNjc5OTMwOTc2LCJleHAiOjE2Nzk5NDUzNzZ9.wreo4fWQI890AS21TkOxwhevUgk1S7frhzzz5FNZjTo",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"15 años\",\r\n    \"precio\": 5000.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/tipoevento/editar/6421c8f4cbcc907382482d57",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tipoevento",
+										"editar",
+										"6421c8f4cbcc907382482d57"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar TIpoEvento",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIxYzliMmNiY2M5MDczODI0ODJkNjQiLCJub21icmUiOiJKb3NlIEx1aXMiLCJjYXJ0IjpbXSwiaWF0IjoxNjc5OTM1OTMzLCJleHAiOjE2Nzk5NTAzMzN9.t5HGihJWIjfeHnsZBiSoGBzi7azdChLZf9KSU8nmAWs",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/tipoevento/eliminar/6421c967cbcc907382482d60",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tipoevento",
+										"eliminar",
+										"6421c967cbcc907382482d60"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Andres Flores",
+			"item": [
+				{
+					"name": "Departamentos",
+					"item": [
+						{
+							"name": "Departamentos-CRUD",
+							"item": [
+								{
+									"name": "mostrar departamentos-nombre",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/api/departamentos/",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"departamentos",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "agregar departamentos-nombre",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\":\"Peten\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/departamentos/agregar",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"departamentos",
+												"agregar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "editar departamento-nombre",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\":\"perez\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/api/departamentos/editar/641fd554f3f2d0db017aa7fb",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"departamentos",
+												"editar",
+												"641fd554f3f2d0db017aa7fb"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "eliminar departamento-nombre",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/api/departamentos/eliminar/6421ffb77f8a14c78555b89f",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"departamentos",
+												"eliminar",
+												"6421ffb77f8a14c78555b89f"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Jhonatan Acalon",
+			"item": [
+				{
+					"name": "Reservaciones",
+					"item": [
+						{
+							"name": "Todas las reservaciones",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDU3NDMwMSwiZXhwIjoxNjgwNTg4NzAxfQ.vuQrWdDffhDV3UqtxI_3csQoKvShXUtN-MZrZHJsz-Y",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reservaciones activas client",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/reservacion",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"reservacion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agregar Habitacion Reservacion",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDY1ODEyOSwiZXhwIjoxNjgwNjcyNTI5fQ.PN1ver9cbjKR4-U_6PQxowo0y6C724VSfUASzh5Ff64",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"habitacion_id\": \"642247d424523e249c92992f\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/agregarHabitacion/642ce3369f8799f4ecf5cab4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"agregarHabitacion",
+										"642ce3369f8799f4ecf5cab4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agregar Reservacion",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDY1ODEyOSwiZXhwIjoxNjgwNjcyNTI5fQ.PN1ver9cbjKR4-U_6PQxowo0y6C724VSfUASzh5Ff64",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fechaStart\": \"2023-03-27\",\r\n    \"horaStart\": \"07:04:00Z\",\r\n    \"fechaEnd\": \"2023-04-01\",\r\n    \"horaEnd\": \"14:45:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/agregar/642247d224523e249c929929",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"agregar",
+										"642247d224523e249c929929"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Editar reservacion",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fechaStart\": \"2023-03-29\",\r\n    \"horaStart\": \"07:30:00Z\",\r\n    \"fechaEnd\": \"2023-04-05\",\r\n    \"horaEnd\": \"14:50:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/editar/id_reserva_a_editar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"editar",
+										"id_reserva_a_editar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar habitacion",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDFlODYzMWYzMjUxNzY2YjNiNzQyODEiLCJub21icmUiOiJTdGV2ZW4gUGVuYXRlIiwiY2FydCI6IiIsImlhdCI6MTY4MDY1ODEyOSwiZXhwIjoxNjgwNjcyNTI5fQ.PN1ver9cbjKR4-U_6PQxowo0y6C724VSfUASzh5Ff64",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "  { \r\n      \"habitacion_id\": \"642247d224523e249c929929\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/eliminar/habitacion/642ce3369f8799f4ecf5cab4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"eliminar",
+										"habitacion",
+										"642ce3369f8799f4ecf5cab4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar reservacion",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/reservaciones/eliminar/id_reserva_a_eliminar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reservaciones",
+										"eliminar",
+										"id_reserva_a_eliminar"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agregar habitacion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"precio\": 1500,\r\n    \"descripcion\": \"Buena habitacion\",\r\n    \"img\": \"una imagen\",\r\n    \"capacidad\": 4,\r\n    \"hotel\": \"63f2a384c0cb88cc2b5f1d60\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/habitacion/agregar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"habitacion",
+								"agregar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Luis Pérez",
+			"item": [
+				{
+					"name": "Habitaciones",
+					"item": [
+						{
+							"name": "GET Habitaciones",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/habitaciones/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"habitaciones",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID Habitacion",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/habitaciones/_id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"habitaciones",
+										"_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Habitacion",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"precio\": 120,\r\n    \"hotel\": \"_id\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/habitaciones/agregar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"habitaciones",
+										"agregar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Habitacion",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"precio\": 117\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/habitaciones/editar/_id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"habitaciones",
+										"editar",
+										"_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Habitacion",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/habitaciones/eliminar/_id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"habitaciones",
+										"eliminar",
+										"_id"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Hoteles",
+					"item": [
+						{
+							"name": "GET Hoteles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/hoteles/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Hoteles By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/hoteles/_id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										"_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Hotel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Hotel Linux\",\r\n    \"departamento\": \"_id\",\r\n    \"direccion\": \"Zona 5\",\r\n    \"nit\": \"456465456\",\r\n    \"rating\": \"4\",\r\n    \"eventos\": [\r\n        \"_id\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/hoteles/agregar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										"agregar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Hotel",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Hotel Windows\",\r\n    \"departamento\": \"_id\",\r\n    \"direccion\": \"Zona 5\",\r\n    \"nit\": \"55555555555\",\r\n    \"rating\": \"6\",\r\n    \"eventos\": [\r\n        \"_id\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/hoteles/editar/_id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										"editar",
+										"_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Hotel",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/hoteles/eliminar/_id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										"eliminar",
+										"_id"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Josue Ambrosio",
+			"item": [
+				{
+					"name": "Servicios",
+					"item": [
+						{
+							"name": "POST Servicio Agregar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n  \"nombreServicio\":\"Arroz\",\r\n  \"descripcion\":\"para el deseo de el invierno en navidad\",\r\n  \"precio\":12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/servicios/agregar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"servicios",
+										"agregar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Servicio Editar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n  \"nombreEvento\":\"Perras\",\r\n  \"cantidadUsuarios\":12326,\r\n  \"fechaHoraStart\":\"2022-02-21\",\r\n  \"fechaHoraEnd\":\"2022-02-22\",\r\n  \"horaInicio\":\":01:33:00Z\",\r\n  \"horaFinal\":\":19:32:00Z\",\r\n  \"tipoEvento\":\"641fe00da4e1f1ef9e51fccf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/evento/editar/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"evento",
+										"editar",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Servicio Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/evento/eliminar/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"evento",
+										"eliminar",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Servicio Mostrar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/evento/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"evento",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Eventos",
+					"item": [
+						{
+							"name": "POST Eventos Agregar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nombreServicio\":\"cafe\",\r\n  \"descripcion\":\"de buena calidad\",\r\n  \"precio\":13\r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/servicios/agregar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"servicios",
+										"agregar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Eventos Editar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nombreServicio\":\"Tuallas\",\r\n  \"descripcion\":\"para el deseo de el invierno en navidad\",\r\n  \"precio\":12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/evento/editar/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"evento",
+										"editar",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Eventos Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/servicios/eliminar/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"servicios",
+										"eliminar",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Eventos Mostrar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/servicios/mostrar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"servicios",
+										"mostrar"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Solicitudes",
+					"item": [
+						{
+							"name": "Eventos de un hotel",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/hoteles/eventosH/6434e7bf890021edbeb11d7b",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"hoteles",
+										"eventosH",
+										"6434e7bf890021edbeb11d7b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Historial de servicios Users",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDM0ZWI1NWUwNTE3ZDY3ODIzMjgwOWQiLCJub21icmUiOiJQZWRybyBIZXJuYW5kZXoiLCJjYXJ0IjoiIiwiaWF0IjoxNjgxNjEyMDYxLCJleHAiOjE2ODE2MjY0NjF9.SYZO-JM0w0rjF4T9wc_rMCbOuNBTbiZotHLH6EvIdFA",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/clientes/mostrarServicios",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"clientes",
+										"mostrarServicios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Historial de hoteles Users",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDM0ZWI1NWUwNTE3ZDY3ODIzMjgwOWQiLCJub21icmUiOiJQZWRybyBIZXJuYW5kZXoiLCJjYXJ0IjoiIiwiaWF0IjoxNjgxNjEyMDYxLCJleHAiOjE2ODE2MjY0NjF9.SYZO-JM0w0rjF4T9wc_rMCbOuNBTbiZotHLH6EvIdFA",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/clientes/mostrarHistorial",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"clientes",
+										"mostrarHistorial"
+									],
+									"query": [
+										{
+											"key": "x-token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDM0ZWI1NWUwNTE3ZDY3ODIzMjgwOWQiLCJub21icmUiOiJQZWRybyBIZXJuYW5kZXoiLCJjYXJ0IjoiIiwiaWF0IjoxNjgxNjEyMDYxLCJleHAiOjE2ODE2MjY0NjF9.SYZO-JM0w0rjF4T9wc_rMCbOuNBTbiZotHLH6EvIdFA",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Logear y creacion de Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"correo\": \"msalvatierra@corrreo.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "x-token",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

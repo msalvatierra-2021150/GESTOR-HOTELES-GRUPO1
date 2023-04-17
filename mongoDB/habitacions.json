@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "642247ca24523e249c929923"
+  },
+  "precio": 1500,
+  "descripcion": "Buena habitacion",
+  "img": "una imagen",
+  "capacidad": 4,
+  "hotel": {
+    "$oid": "63f2a384c0cb88cc2b5f1d60"
+  },
+  "usuario": {
+    "$oid": "642247a324523e249c92991c"
+  },
+  "disponible": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642247cf24523e249c929926"
+  },
+  "precio": 1500,
+  "descripcion": "Buena habitacion",
+  "img": "una imagen",
+  "capacidad": 4,
+  "hotel": {
+    "$oid": "63f2a384c0cb88cc2b5f1d60"
+  },
+  "usuario": {
+    "$oid": "642247a324523e249c92991c"
+  },
+  "disponible": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642247d224523e249c929929"
+  },
+  "precio": 1500,
+  "descripcion": "Buena habitacion",
+  "img": "una imagen",
+  "capacidad": 4,
+  "hotel": {
+    "$oid": "63f2a384c0cb88cc2b5f1d60"
+  },
+  "usuario": {
+    "$oid": "642247a324523e249c92991c"
+  },
+  "disponible": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642247d324523e249c92992c"
+  },
+  "precio": 1500,
+  "descripcion": "Buena habitacion",
+  "img": "una imagen",
+  "capacidad": 4,
+  "hotel": {
+    "$oid": "63f2a384c0cb88cc2b5f1d60"
+  },
+  "usuario": {
+    "$oid": "642247a324523e249c92991c"
+  },
+  "disponible": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642247d424523e249c92992f"
+  },
+  "precio": 1500,
+  "descripcion": "Buena habitacion",
+  "img": "una imagen",
+  "capacidad": 4,
+  "hotel": {
+    "$oid": "63f2a384c0cb88cc2b5f1d60"
+  },
+  "usuario": {
+    "$oid": "642247a324523e249c92991c"
+  },
+  "disponible": true,
+  "__v": 0
+}]

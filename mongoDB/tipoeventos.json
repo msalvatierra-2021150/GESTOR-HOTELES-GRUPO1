@@ -1,0 +1,9 @@
+[{
+  "_id": {
+    "$oid": "642241da3752fbec83e02343"
+  },
+  "nombre": "Boda",
+  "estado": true,
+  "precio": 8000,
+  "__v": 0
+}]
