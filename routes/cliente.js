@@ -1,7 +1,7 @@
 //Importaciones
 const { Router } = require('express');
 const { check } = require('express-validator');
-const { getUsuarios, postUsuario, putUsuario, deleteUsuario } = require('../controllers/cliente');
+const { getUsuarios, postUsuario, putUsuario, deleteUsuario ,getServiciosHoteles,getServiciosUser} = require('../controllers/cliente');
 const { esRoleValido, emailExiste, existeUsuarioPorId } = require('../helpers/db-validators');
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
@@ -13,6 +13,16 @@ router.get('/mostrar', [
     validarJWT,
     NoEsAdminRole
 ],getUsuarios);
+
+router.get('/mostrarHistorial', [
+    validarJWT,
+    NoEsAdminRole
+],getServiciosHoteles);
+
+router.get('/mostrarServicios', [
+    validarJWT,
+    NoEsAdminRole
+],getServiciosUser);
 
 router.post('/agregar', [
     check('nombre', 'El nombre es obligatorio').not().isEmpty(),

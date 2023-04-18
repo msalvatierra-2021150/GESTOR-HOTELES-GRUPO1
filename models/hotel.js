@@ -42,7 +42,11 @@ const HotelSchema = Schema({
     },
     eventos: [{
         type: Schema.Types.ObjectId,
+<<<<<<< HEAD
         ref: 'TipoEvento'
+=======
+        ref: 'Evento'
+>>>>>>> origin/consandy
     }]
 });
 

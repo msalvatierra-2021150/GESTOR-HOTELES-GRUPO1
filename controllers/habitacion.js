@@ -3,6 +3,7 @@ const { request, response } = require('express')
 // Modelo
 const Habitacion = require('../models/habitacion');
 const Hotel = require('../models/hotel');
+
 //------------------------------READ habitaciones-------------------------------------
 const getHabitaciones = async (req = request, res = response) => {
 
@@ -106,7 +107,6 @@ const postHabitacion = async (req = request, res = response) => {
     const { ...resto } = req.body;
 
     const habitacionDb = await Habitacion(resto);
-
     await habitacionDb.save();
 
     res.status(201).json({
@@ -124,7 +124,6 @@ const putHabitacion = async (req = request, res = response) => {
     const { hotel, ...resto } = req.body;
 
     const habitacionEditada = await Habitacion.findByIdAndUpdate(id, resto, { new: true });
-
     res.status(201).json({
         msg: 'PUT API - Controlador habitacion',
         habitacionEditada

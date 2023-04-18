@@ -1,5 +1,6 @@
 [{
   "_id": {
+<<<<<<< HEAD
     "$oid": "6439dc9baa78c7b4dd4c5759"
   },
   "precio": 120,
@@ -7,6 +8,51 @@
   "capacidad": 1,
   "hotel": {
     "$oid": "643ae2a32a212766d42bd37e"
+=======
+    "$oid": "642247ca24523e249c929923"
+  },
+  "precio": 1500,
+  "descripcion": "Buena habitacion",
+  "img": "una imagen",
+  "capacidad": 4,
+  "hotel": {
+    "$oid": "63f2a384c0cb88cc2b5f1d60"
+  },
+  "usuario": {
+    "$oid": "642247a324523e249c92991c"
+  },
+  "disponible": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642247cf24523e249c929926"
+  },
+  "precio": 1500,
+  "descripcion": "Buena habitacion",
+  "img": "una imagen",
+  "capacidad": 4,
+  "hotel": {
+    "$oid": "63f2a384c0cb88cc2b5f1d60"
+  },
+  "usuario": {
+    "$oid": "642247a324523e249c92991c"
+  },
+  "disponible": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642247d224523e249c929929"
+  },
+  "precio": 1500,
+  "descripcion": "Buena habitacion",
+  "img": "una imagen",
+  "capacidad": 4,
+  "hotel": {
+    "$oid": "63f2a384c0cb88cc2b5f1d60"
+  },
+  "usuario": {
+    "$oid": "642247a324523e249c92991c"
+>>>>>>> origin/consandy
   },
   "disponible": true,
   "__v": 0

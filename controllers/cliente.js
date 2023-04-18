@@ -3,6 +3,71 @@ const bcrypt = require('bcryptjs');
 //Importación del modelo
 const Usuario = require('../models/usuario');
 
+const Factura = require('../models/factura');
+const Habitaciones = require('../models/habitacion');
+const Servicios = require('../models/servicios');
+const Reservaciones = require('../models/reservacion');
+const Hotel = require('../models/hotel');
+
+const getServiciosHoteles = async (req = request, res = response) => {
+    //id usuario
+    const query = {usuario:req.usuario.id }
+    //obtenes 
+    const listaFactura = await Factura.findOne(query);
+
+    const reservacionF = listaFactura.cart_reservaciones;
+    
+    const hoteles = [];
+    const ids=[];
+    for(let x = 0; x< reservacionF.length;x++){       
+        const reservaciones = await Reservaciones.findById(reservacionF[x].itemId);       
+        const habitacion = await reservaciones.habitaciones;
+        for(let i = 0; i< habitacion.length;i++){
+            const habitaciones = await Habitaciones.findById(habitacion[i].habitacion_id);
+            const hotels = await Hotel.find(habitaciones.hotel);
+            if(hotels){        
+                if(!ids.includes((habitaciones.hotel).toString())){
+                    ids.push((habitaciones.hotel).toString());
+                    hoteles.push(hotels);
+                }
+            }          
+        }
+    }
+    res.json({
+        msg: 'Hoteles:',hoteles
+             
+        
+    });
+}
+const getServiciosUser = async (req = request, res = response) => {
+     //id usuario
+     const query = {usuario:req.usuario.id }
+     //obtenes 
+     const listaFactura = await Factura.find(query);
+    const serviciosU = [];
+    const ids = [];
+     for(let x = 0; x< listaFactura.length;x++){
+        
+        const serviciosF = listaFactura[x].cart_servicios;
+        for(let i = 0; i< serviciosF.length;i++){
+            const serviciosC = await Servicios.findById( (serviciosF[i].itemId));
+            if(serviciosC){
+                if(!ids.includes((serviciosF[i].itemId).toString())){
+                    ids.push((serviciosF[i].itemId).toString());
+                    serviciosU.push(serviciosC);
+                }
+            }
+            
+        }
+     }
+     res.json({
+        msg: 'Servicios:',serviciosU
+             
+    });
+     
+
+}
+
 const getUsuarios = async (req = request, res = response) => {
     //condiciones del get
     const query = { estado: true , _id: req.usuario.id};
@@ -74,7 +139,9 @@ module.exports = {
     getUsuarios,
     postUsuario,
     putUsuario,
-    deleteUsuario
+    deleteUsuario,
+    getServiciosHoteles,
+    getServiciosUser
 }
 
 

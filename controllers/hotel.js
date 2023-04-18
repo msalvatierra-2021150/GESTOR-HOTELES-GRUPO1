@@ -2,9 +2,29 @@
 const { request, response } = require('express')
 // Modelo
 const Hotel = require('../models/hotel');
+const Evento = require('../models/evento');
 
-//------------------------------READ hoteles-------------------------------------
->>>>>>> origin/luis
+//------------------------ver los eventos del hotel-------------------------------------
+const getEventoH = async (req = request, res = response) => {
+    const { id } = req.params;
+    const hotelById = await Hotel.findById(id)
+
+    const arreglo = hotelById.eventos
+    const eventos = [];
+    for(let x = 0; x< arreglo.length;x++){
+        const eventoH = await Promise.all([
+            Evento.findById(arreglo[x])
+        ]);
+        eventos.push(eventoH)
+    }
+    res.json({
+            
+        msg:eventos
+    })
+
+    
+}
+//------------------------------READ HOTELES-------------------------------------
 const getHoteles = async (req = request, res = response) => {
 
     const listaHoteles = await Promise.all([
@@ -75,6 +95,7 @@ const putHotel = async (req = request, res = response) => {
     });
 
 }
+
 //------------------------------DELETE hoteles-------------------------------------
 const deleteHotel = async (req = request, res = response) => {
 
@@ -97,5 +118,6 @@ module.exports = {
     getHotelById,
     postHotel,
     putHotel,
-    deleteHotel
+    deleteHotel,
+    getEventoH
 }

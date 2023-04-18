@@ -4,9 +4,8 @@ const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
 const { existeHotelById } = require('../helpers/db-validators');
-
-const { getHoteles, getHotelById, postHotel, putHotel, deleteHotel } = require('../controllers/hotel');
 const { esAdminHotelRole, esAdminAppRole } = require('../middlewares/validar-roles');
+const { getHoteles, getHotelById, postHotel, putHotel, deleteHotel,getEventoH } = require('../controllers/hotel');
 
 const router = Router();
 
@@ -15,6 +14,11 @@ router.get('/', [
     validarJWT,
     // validarCampos
 ], getHoteles);
+//------------------------------GET eventos hotel---------------------------------
+router.get('/eventosH/:id', [
+    
+    // validarCampos
+], getEventoH);
 
 //------------------------------READ by ID route---------------------------------
 router.get('/:id', [

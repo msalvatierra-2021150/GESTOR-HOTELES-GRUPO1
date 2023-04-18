@@ -16,7 +16,6 @@ router.get('/', [
     validarCampos
 ],getHabitaciones);
 
-
 //------------------------------READ by ID route---------------------------------
 router.get('/:id', [
     check('id', 'No es un id valido').isMongoId(),
