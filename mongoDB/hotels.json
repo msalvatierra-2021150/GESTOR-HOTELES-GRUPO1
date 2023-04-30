@@ -1,47 +1,39 @@
 [{
   "_id": {
-    "$oid": "643a07f276a64e91981147e7"
+    "$oid": "644d44b7f8d513ffe7a1ca05"
   },
-  "nombre": "Barcelo",
-  "direccion": "Zona 4",
+  "nombre": " Hilton Guatemala City GT",
+  "direccion": "East Vista Real Complex, CA-1, Cdad. de Guatemala 001015",
   "departamento": {
-    "$oid": "64376d93d1813dc816a78be9"
+    "$oid": "644b243644a1a6c062d0116d"
   },
-  "nit": "456465456",
-  "rating": 4,
-  "numero_reservaciones": 0,
+  "nit": "87654321",
+  "rating": 5,
+  "numero_reservaciones": 110,
   "img": "N/A",
-  "descripcion": "Hotel",
+  "descripcion": "Ambiente agradable, excelente atención, amplio parqueo, clima fresco, ambiente ecológico natural, habitaciones climatizadas, variedad en comidas y bebidas disponibles",
   "usuario": {
-    "$oid": "642dd84fb7dd050b4ffdf77c"
+    "$oid": "64443f2988d76bb93e324750"
   },
-  "eventos": [
-    {
-      "$oid": "64376fa60cd3295c3874ffaf"
-    }
-  ],
+  "eventos": [],
   "__v": 0
 },{
   "_id": {
-    "$oid": "643ae2a32a212766d42bd37e"
+    "$oid": "644d459ef8d513ffe7a1ca21"
   },
-  "nombre": "Hotel Linux",
-  "direccion": "Zona 5",
+  "nombre": " Hotel Casona de La Isla",
+  "direccion": "Calle Union 20, Flores",
   "departamento": {
-    "$oid": "64376d93d1813dc816a78be9"
+    "$oid": "64454ebbd0362b14437931dd"
   },
-  "nit": "456465456",
-  "rating": 4,
-  "numero_reservaciones": 0,
+  "nit": "87654321",
+  "rating": 3,
+  "numero_reservaciones": 85,
   "img": "N/A",
-  "descripcion": "Hotel by in6bm",
+  "descripcion": "Excelente servicio de todos los empleados. Habitaciones limpias. Ambiente agradable.",
   "usuario": {
-    "$oid": "642dd84fb7dd050b4ffdf77c"
+    "$oid": "644b42e019d00e87922a5286"
   },
-  "eventos": [
-    {
-      "$oid": "64376fa60cd3295c3874ffaf"
-    }
-  ],
+  "eventos": [],
   "__v": 0
 }]

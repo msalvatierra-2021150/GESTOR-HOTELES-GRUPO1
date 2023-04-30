@@ -4,4 +4,16 @@
   },
   "rol": "ADMIN_APP",
   "__v": 0
+},{
+  "_id": {
+    "$oid": "644d40b4adb4f6e9ea82347e"
+  },
+  "rol": "ADMIN_HOTEL",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d40c9adb4f6e9ea82347f"
+  },
+  "rol": "USUARIO_ROLE",
+  "__v": 0
 }]

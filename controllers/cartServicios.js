@@ -12,7 +12,7 @@ const getCarrito = async (req = request, res = response) => {
     return res.status(200).json({ cart_servicios });
   } catch (err) {
     console.log(err);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ msg: "Internal server error" });
   }
 };
 
@@ -23,7 +23,7 @@ const postCarrito = async (req = request, res = response) => {
     const item = await Servicio.findById(itemId);
 
     if (!item) {
-      return res.status(404).json({ message: "Producto no existente" });
+      return res.status(404).json({ msg: "Producto no existente" });
     }
 
     const idUsuario = req.usuario.id;
@@ -43,10 +43,10 @@ const postCarrito = async (req = request, res = response) => {
     }
 
     await Usuario.findByIdAndUpdate(idUsuario, { cart_servicios });
-    return res.status(200).json({ message: "Producto agregado al carrito" });
+    return res.status(200).json({ msg: "Producto agregado al carrito" });
   } catch (err) {
     console.log(err);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ msg: "Internal server error" });
   }
 };
 
@@ -57,7 +57,7 @@ const putCarrito = async (req = request, res = response) => {
       const item = await Servicio.findById(itemId);
   
       if (!item) {
-        return res.status(404).json({ message: "Producto no existente" });
+        return res.status(404).json({ msg: "Producto no existente" });
       }
   
       const idUsuario = req.usuario.id;
@@ -74,10 +74,10 @@ const putCarrito = async (req = request, res = response) => {
       }
   
       await Usuario.findByIdAndUpdate(idUsuario, { cart_servicios });
-      return res.status(200).json({ message: "Producto degradado en 1 al carrito" });
+      return res.status(200).json({ msg: "Producto degradado en 1 al carrito" });
     } catch (err) {
       console.log(err);
-      return res.status(500).json({ message: "Internal server error" });
+      return res.status(500).json({ msg: "Internal server error" });
     }
 };
 
@@ -92,10 +92,10 @@ const deleteCarrito = async (req = request, res = response) => {
     const carritoActualizado = cart_servicios.filter((item) => item.itemId !== itemId);
 
     await Usuario.findByIdAndUpdate(idUsuario, { cart_servicios: carritoActualizado });
-    return res.status(200).json({ message: "Item eliminado del carrito" });
+    return res.status(200).json({ msg: "Item eliminado del carrito" });
   } catch (err) {
     console.log(err);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ msg: "Internal server error" });
   }
 };  
 

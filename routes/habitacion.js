@@ -34,6 +34,7 @@ router.get('/activas/disponibles', [
 router.post('/agregar',  [
     check('hotel', 'No es un id valido').isMongoId(),
     validarJWT,
+    esAdminHotelRole,
     validarCampos
 ],postHabitacion);
 

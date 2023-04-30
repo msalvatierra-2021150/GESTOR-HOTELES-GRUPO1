@@ -6,7 +6,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 //Controllers
-const { getReservaciones, getReservacionesClient, postReservacion, putReservacion, deleteReservacion, deleteReservacionHabitacion, postHabitacionReservacion, getReservacionesActivas, getReservaPorId } = require('../controllers/reservacion');
+const { getReservaciones, getReservacionesClient, postReservacion, putReservacion, deleteReservacion, deleteReservacionHabitacion, postHabitacionReservacion, getReservacionesActivas, getReservaPorId , getReservacionesId} = require('../controllers/reservacion');
 const { existeHabitacionById, existeReservacionById, existeUsuarioPorId } = require('../helpers/db-validators');
 
 
@@ -21,7 +21,7 @@ const router = Router();
 //Mostrar el listado de reservaciones - metodo privado - cualquier persona de user ADMIN_HOTEL
 router.get('/', [
     validarJWT,
-   // tieneRole('ADMIN_HOTEL'),
+    tieneRole('ADMIN_HOTEL'),
     validarCampos
 ], getReservaciones);
 
@@ -50,14 +50,14 @@ router.get('/buscar/user', [
 //Mostrar el listado de reservaciones por cliente que se encuentren activas - metodo privado - cualquier persona de user CLIENT
 router.get('/reservacion', [
     validarJWT,
-    tieneRole('CLIENTE'),
+    tieneRole('USUARIO_ROLE'),
     validarCampos
 ], getReservacionesClient);
 
 //Muestra la reservacion segun el ID - metodo privado - cualquier persona
 router.get('/:id', [
     validarJWT,
-    tieneRole('CLIENTE','ADMIN_HOTEL'),
+    tieneRole('USUARIO_ROLE','ADMIN_HOTEL'),
     check('id', 'No es un ID valido').isMongoId(),
     check('id').custom(existeReservacionById),
     validarCampos
@@ -81,7 +81,7 @@ router.post('/agregarHabitacion/:id', [
     check('id', 'No es un ID valido').isMongoId(),
     check('id').custom(existeReservacionById),
     check('habitacion_id').custom(existeHabitacionById),
-    tieneRole('CLIENTE'),
+    tieneRole('USUARIO_ROLE'),
     validarCampos
 ], postHabitacionReservacion);
 
@@ -94,15 +94,14 @@ router.put('/editar/:id', [
     check('horaStart', 'Agregue la hora de inicio de su estancia').not().isEmpty(),
     check('fechaEnd', 'Agregue una fecha de fin de su estancia').not().isEmpty(),
     check('horaEnd', 'Agregue la hora de fin de su estancia').not().isEmpty(),
-    tieneRole('CLIENTE'),
+    //tieneRole('USUARIO_ROLE'),
     validarCampos
 ], putReservacion);
 
 //Elimina una habitacion de la reservacion - metodo privado - cualquier persona de user CLIENT
 router.delete('/eliminar/habitacion/:id', [
     validarJWT,
-
-    tieneRole('CLIENTE'),
+    //tieneRole('USUARIO_ROLE'),
     check('id', 'No es un ID valido').isMongoId(),
     check('id').custom(existeReservacionById),
     check('habitacion_id').custom(existeHabitacionById),
@@ -112,7 +111,7 @@ router.delete('/eliminar/habitacion/:id', [
 ///Elimina una habitacion de la reservacion - metodo privado - cualquier persona de user CLIENT
 router.delete('/eliminar/habitacion/:id', [
     validarJWT,
-    tieneRole('CLIENTE'),
+    //tieneRole('USUARIO_ROLE'),
     check('id', 'No es un ID valido').isMongoId(),
     check('id').custom(existeReservacionById),
     check('habitacion_id').custom(existeHabitacionById),

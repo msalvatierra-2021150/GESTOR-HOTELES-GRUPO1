@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "64455003d0362b14437931f8"
+  },
+  "nombreEvento": "Boda Maria",
+  "cantidadUsuarios": 15,
+  "estado": true,
+  "fechaHoraInicio": {
+    "$date": "2023-03-27T07:04:00.000Z"
+  },
+  "fechaHoraFin": {
+    "$date": "2023-04-01T14:45:00.000Z"
+  },
+  "tipoEvento": {
+    "$oid": "64454fa8d0362b14437931f5"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d40f9adb4f6e9ea823485"
+  },
+  "nombreEvento": "Cumpleanos Michael",
+  "cantidadUsuarios": 30,
+  "estado": true,
+  "fechaHoraInicio": {
+    "$date": "2023-03-27T07:04:00.000Z"
+  },
+  "fechaHoraFin": {
+    "$date": "2023-04-01T14:45:00.000Z"
+  },
+  "tipoEvento": {
+    "$oid": "644d41ceadb4f6e9ea823487"
+  },
+  "__v": 0
+}]

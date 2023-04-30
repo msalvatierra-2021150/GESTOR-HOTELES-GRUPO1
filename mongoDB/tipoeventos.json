@@ -1,9 +1,17 @@
 [{
   "_id": {
-    "$oid": "642241da3752fbec83e02343"
+    "$oid": "64454fa8d0362b14437931f5"
   },
   "nombre": "Boda",
   "estado": true,
   "precio": 8000,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d41ceadb4f6e9ea823487"
+  },
+  "nombre": "Cumpleanos",
+  "estado": true,
+  "precio": 2000,
   "__v": 0
 }]

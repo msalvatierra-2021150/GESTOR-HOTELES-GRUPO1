@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "64454ebbd0362b14437931dd"
+  },
+  "nombre": "Peten",
+  "estado": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644b243644a1a6c062d0116d"
+  },
+  "nombre": "Guatemala City",
+  "estado": true,
+  "__v": 0
+}]

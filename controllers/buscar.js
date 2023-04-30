@@ -22,14 +22,10 @@ const buscarHotel = async (termino = '', res = response) => {
     // const palabras = termino.trim().split(/\s+/);
     // const regex = new RegExp(palabras.join('|'), 'i');
 
-    const hoteles = await Promise.all([
-        Hotel.countDocuments({
-            $or: [{ nombre: regex }, { direccion: regex }]
-        }),
+    const hoteles = await 
         Hotel.find({
             $or: [{ nombre: regex }, { direccion: regex }]
-        }),
-    ])
+        });
 
     res.json({
         results: hoteles

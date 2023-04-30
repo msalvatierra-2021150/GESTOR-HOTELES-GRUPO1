@@ -7,4 +7,13 @@
   "precio": 12,
   "estado": true,
   "__v": 0
+},{
+  "_id": {
+    "$oid": "644d40a1adb4f6e9ea82347c"
+  },
+  "nombreServicio": "Coca Cola",
+  "descripcion": "Bebida carbonatada azucarada",
+  "precio": 20,
+  "estado": true,
+  "__v": 0
 }]
