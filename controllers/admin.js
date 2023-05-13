@@ -23,6 +23,25 @@ const getAdmin = async (req = request, res = response) => {
     }
 }
 
+const getAllUsers = async (req = request, res = response) => {
+    try {
+        //condiciones del get
+        const query = { };
+    
+        const listaUsuarios = await Usuario.find(query);
+    
+            return res.json({
+                msg: 'get Api - Controlador Usuario',
+                listaUsuarios
+            });
+    } catch (err) {
+        res.status(404).send({
+            msg: "No se pudo listar los admin",
+            err,
+          });
+    }
+}
+
 const postAdmin = async (req = request, res = response) => {
     try {
         //Desestructuración
@@ -102,10 +121,8 @@ const deleteAdmin = async(req = request, res = response) => {
 
 module.exports = {
     getAdmin,
+    getAllUsers,
     postAdmin,
     putAdmin,
     deleteAdmin
 }
-
-
-// CONTROLADOR

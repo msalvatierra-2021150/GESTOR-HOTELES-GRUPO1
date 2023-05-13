@@ -5,7 +5,7 @@ const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
 const { existeHotelById, existeEvento } = require('../helpers/db-validators');
 const { esAdminHotelRole, esAdminAppRole } = require('../middlewares/validar-roles');
-const { getHoteles, getHotelById, postHotel, putHotel, deleteHotel,getEventoH, putEventosHotel } = require('../controllers/hotel');
+const { getHoteles, getHotelById, postHotel, putHotel, deleteHotel,getEventoH, putEventosHotel, getHabitaciones, getAdminHoteles } = require('../controllers/hotel');
 const { existeUsuarioPorId } = require('../helpers/db-validators');
 
 const router = Router();
@@ -15,11 +15,21 @@ router.get('/', [
     validarJWT,
     // validarCampos
 ], getHoteles);
+
+router.get('/admin/hotel', [
+    validarJWT,
+], getAdminHoteles);
+
 //------------------------------GET eventos hotel---------------------------------
 router.get('/eventosH/:id', [
     
     // validarCampos
 ], getEventoH);
+
+//-----------------------------get habitaciones------------------------
+router.get('/habitacionesH/:id', [
+    validarJWT,
+], getHabitaciones);
 
 //------------------------------READ by ID route---------------------------------
 router.get('/:id', [

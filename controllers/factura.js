@@ -7,11 +7,10 @@ const getFacturas = async (req = request, res = response) => {
   try {
     //condiciones del get
     const query = { usuario: req.usuario.id };
-  
-    const listaFacturas = await 
-      Factura.find(query)
-        .populate("usuario", "cart")
-  
+
+    const listaFacturas = await
+      Factura.find(query).populate("usuario", "nombre");
+
     return res.json({
       msg: "Lista de Facturas del Cliente",
       listaFacturas,

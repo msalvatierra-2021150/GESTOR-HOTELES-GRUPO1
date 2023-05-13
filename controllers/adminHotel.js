@@ -8,7 +8,7 @@ const getAdmin = async (req = request, res = response) => {
         //condiciones del get
         const query = {_id: req.usuario.id};
     
-        const listaUsuarios = await Usuario.findById(query);
+        const listaUsuarios = await Usuario.find(query);
     
             return res.json({
                 msg: 'get Api - Controlador Usuario',

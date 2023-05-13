@@ -6,10 +6,8 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 //Controllers
-const { getReservaciones, getReservacionesClient, postReservacion, putReservacion, deleteReservacion, deleteReservacionHabitacion, postHabitacionReservacion, getReservacionesActivas, getReservaPorId , getReservacionesId} = require('../controllers/reservacion');
+const { getReservaciones, getReservacionesClient, postReservacion, putReservacion, deleteReservacion, deleteReservacionHabitacion, postHabitacionReservacion, getReservacionesActivas, getReservaPorId, getReservacionesByHotel } = require('../controllers/reservacion');
 const { existeHabitacionById, existeReservacionById, existeUsuarioPorId } = require('../helpers/db-validators');
-
-
 //Middlewares
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
@@ -25,45 +23,42 @@ router.get('/', [
     validarCampos
 ], getReservaciones);
 
-//Mostrar el listado de reservaciones por cliente - metodo privado - cualquier persona de user CLIENT
-router.get('/reservacion', [
-    validarJWT,
-   // tieneRole('CLIENTE'),
-    validarCampos
-], getReservacionesId);
-
-//Mostrar el listado de reservaciones en los hoteles que administra el admin hoteles - metodo privado - cualquier persona de user ADMIN_HOTEL
-router.get('/', [
-    validarJWT,
-    tieneRole('ADMIN_HOTEL'),
-    validarCampos
-], getReservaciones);
-
-//Mostrar el listado de reservaciones activas en los hoteles que administra el admin hoteles buscando con el id del usuario (CLIENT) - metodo privado - cualquier persona de user ADMIN_HOTEL
-router.get('/buscar/user', [
-    validarJWT,
-    tieneRole('ADMIN_HOTEL'),
-    check('userId').custom(existeUsuarioPorId),
-    validarCampos
-], getReservacionesActivas);
-
-//Mostrar el listado de reservaciones por cliente que se encuentren activas - metodo privado - cualquier persona de user CLIENT
-router.get('/reservacion', [
-    validarJWT,
-    tieneRole('USUARIO_ROLE'),
-    validarCampos
-], getReservacionesClient);
-
 //Muestra la reservacion segun el ID - metodo privado - cualquier persona
 router.get('/:id', [
     validarJWT,
-    tieneRole('USUARIO_ROLE','ADMIN_HOTEL'),
+    tieneRole('USUARIO_ROLE', 'ADMIN_HOTEL'),
     check('id', 'No es un ID valido').isMongoId(),
     check('id').custom(existeReservacionById),
     validarCampos
 ], getReservaPorId);
 
-//Agregar una habitacion - metodo privado - cualquier persona de user CLIENT
+//Mostrar el listado de reservaciones activas en los hoteles que administra el admin hoteles buscando con el id del usuario 
+//(CLIENT) - metodo privado - cualquier persona de user ADMIN_HOTEL
+router.get('/buscar/user/:id', [
+    validarJWT,
+    tieneRole('ADMIN_HOTEL'),
+    check('id', 'No es un ID valido').isMongoId(),
+    //check('userId').custom(existeUsuarioPorId),
+    validarCampos
+], getReservacionesActivas);
+
+router.get('/hotel/:id', [
+    validarJWT,
+    tieneRole('ADMIN_HOTEL'),
+    check('id', 'No es un ID valido').isMongoId(),
+    validarCampos
+], getReservacionesByHotel);
+
+//Mostrar el listado de reservaciones por cliente que se encuentren activas - metodo privado - cualquier persona de user CLIENT
+router.get('/client/reservacion/:id', [
+    validarJWT,
+    check('id', 'No es un ID valido').isMongoId(),
+    check('id').custom(existeReservacionById),
+    tieneRole('USUARIO_ROLE'),
+    validarCampos
+], getReservacionesClient);
+
+//Crea una reservacion - metodo privado - cualquier persona de user CLIENT
 router.post('/agregar/:id', [
     validarJWT,
     check('id', 'No es un ID valido').isMongoId(),
@@ -72,10 +67,11 @@ router.post('/agregar/:id', [
     check('horaStart', 'Agregue la hora de inicio de su estancia').not().isEmpty(),
     check('fechaEnd', 'Agregue una fecha de fin de su estancia').not().isEmpty(),
     check('horaEnd', 'Agregue la hora de fin de su estancia').not().isEmpty(),
-    tieneRole('CLIENTE'),
+    tieneRole('USUARIO_ROLE'),
     validarCampos
 ], postReservacion);
 
+//Agregar una habitacion a una reserva creada - metodo privado - cualquier persona de user CLIENT
 router.post('/agregarHabitacion/:id', [
     validarJWT,
     check('id', 'No es un ID valido').isMongoId(),
@@ -101,17 +97,7 @@ router.put('/editar/:id', [
 //Elimina una habitacion de la reservacion - metodo privado - cualquier persona de user CLIENT
 router.delete('/eliminar/habitacion/:id', [
     validarJWT,
-    //tieneRole('USUARIO_ROLE'),
-    check('id', 'No es un ID valido').isMongoId(),
-    check('id').custom(existeReservacionById),
-    check('habitacion_id').custom(existeHabitacionById),
-    validarCampos
-], deleteReservacionHabitacion);
-
-///Elimina una habitacion de la reservacion - metodo privado - cualquier persona de user CLIENT
-router.delete('/eliminar/habitacion/:id', [
-    validarJWT,
-    //tieneRole('USUARIO_ROLE'),
+    tieneRole('USUARIO_ROLE'),
     check('id', 'No es un ID valido').isMongoId(),
     check('id').custom(existeReservacionById),
     check('habitacion_id').custom(existeHabitacionById),
@@ -121,7 +107,7 @@ router.delete('/eliminar/habitacion/:id', [
 //Elimina la reservacion - metodo privado - cualquier persona de user CLIENT
 router.delete('/eliminar/:id', [
     validarJWT,
-    tieneRole('CLIENTE'),
+    tieneRole('USUARIO_ROLE'),
     check('id', 'No es un ID valido').isMongoId(),
     check('id').custom(existeReservacionById),
     validarCampos

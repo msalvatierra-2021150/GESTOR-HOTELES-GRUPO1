@@ -13,13 +13,13 @@ const getReservaciones = async (req = request, res = response) => {
     const query = { estado: true };
     const reservasDB = await Reservacion.find(query).lean();
     const hotelAdminBD = await Hotel.find({ usuario: req.usuario._id }).lean();
-  
+
     if (hotelAdminBD.length === 0) {
       return res.status(400).json({
         msg: "No se encontró ningún hotel para el usuario administrador proporcionado.",
       });
     }
-  
+
     const matchs = [];
     //Nos posicionamos en el arreglo de hoteles
     for (let k = 0; k < hotelAdminBD.length; k++) {
@@ -52,6 +52,73 @@ const getReservaciones = async (req = request, res = response) => {
     } else {
       return res.json({ reservas: matchs });
     }
+  } catch (err) {
+    res.status(404).send({
+      msg: "No se pudo obtener la reservacion",
+      err,
+    });
+  }
+};
+
+//Mostrar la reserva que coincida con el id proporcionado
+const getReservaPorId = async (req = request, res = response) => {
+  try {
+    const { id } = req.params;
+    const query = { _id: id, estado: true };
+    const reserva = await Reservacion.find(query);
+
+    res.status(201).json({ reservation: reserva });
+  } catch (err) {
+    res.status(404).send({
+      msg: "No se pudo obtener la reservacion",
+      err,
+    });
+  }
+};
+
+//Busca las reservaciones del hotel del admin logeado
+const getReservacionesByHotel = async (req = request, res = response) => {
+
+  const { id } = req.params;
+
+  try {
+    //Condiciones del get, devuelve todas las reservaciones realizadas
+    const query = { estado: true };
+    const reservasDB = await Reservacion.find(query).lean();
+    const hotelAdminBD = await Hotel.find({ _id: id }).lean();
+
+    if (hotelAdminBD.length === 0) {
+      return res.status(400).json({
+        msg: "No se encontró ningún hotel para el usuario administrador proporcionado.",
+      });
+    }
+
+    const matchs = [];
+    //Nos posicionamos en el arreglo de hoteles
+    for (let k = 0; k < hotelAdminBD.length; k++) {
+      const hotelAdmin = hotelAdminBD[k];
+      //Se recorre el arreglo de reservaciones
+      for (let j = 0; j < reservasDB.length; j++) {
+        const reservas = reservasDB[j];
+        //Se recorre el arreglo de habitaciones
+        for (let i = 0; i < reservas.habitaciones.length; i++) {
+          //Buscar las habitaciones que estan en el arreglo segun su id
+          const habitacion = await Habitacion.findById(
+            reservas.habitaciones[i].habitacion_id
+          ).lean();
+          const hotelHabitacionClient = await Hotel.findById(habitacion.hotel).lean();
+          if (!hotelHabitacionClient) {
+            return res.status(400).json({ msg: 'No se encontró el hotel de la habitación.' });
+          }
+          if (hotelHabitacionClient._id.toString() === hotelAdmin._id.toString()) {
+            matchs.push(reservas);
+            break;
+          }
+        }
+      }
+    }
+    //Devolvemos las reservaciones si todo ha ido bien
+    return res.json({ reservas: matchs });
   } catch (err) {
     res.status(404).send({
       msg: "No se pudo obtener la reservacion",
@@ -63,18 +130,18 @@ const getReservaciones = async (req = request, res = response) => {
 //Mostrar el listado de reservaciones del admin hoteles que coincidan con el id del usuario
 const getReservacionesActivas = async (req = request, res = response) => {
   try {
-    const { userId } = req.body;
+    const { id } = req.params;
     //Condiciones del get, devuelve todas las reservaciones realizadas
-    const query = { usuario: userId, estado: true };
+    const query = { usuario: id, estado: true };
     const reservasDB = await Reservacion.find(query).lean();
     const hotelAdminBD = await Hotel.find({ usuario: req.usuario._id }).lean();
-  
+
     if (hotelAdminBD.length === 0) {
       return res.status(400).json({
         msg: "No se encontró ningún hotel para el usuario administrador proporcionado.",
       });
     }
-  
+
     const matchs = [];
     //Nos posicionamos en el arreglo de hoteles
     for (let k = 0; k < hotelAdminBD.length; k++) {
@@ -99,14 +166,9 @@ const getReservacionesActivas = async (req = request, res = response) => {
         }
       }
     }
-    //Devolvemos las reservaciones si todo ha ido bien
-    if (matchs.length === 0) {
-      return res.status(400).json({
-        msg: "El usuario cliente proporcionado, no tiene ninguna reservacion en sus hoteles.",
-      });
-    } else {
-      return res.json({ reservas: matchs });
-    }
+    
+    return res.json({ reservas: matchs });
+
   } catch (err) {
     res.status(404).send({
       msg: "No se pudo obtener las reservaciones activas",
@@ -115,41 +177,44 @@ const getReservacionesActivas = async (req = request, res = response) => {
   }
 };
 
+
 //Mostrar el listado de reservaciones por cliente
 const getReservacionesClient = async (req = request, res = response) => {
   try {
-    //Condiciones del get, devuelve todas las reservaciones realizadas que esten activas
-    const query = { usuario: req.usuario._id, estado: true };
-    //Promesa para obtener los registros
-    const listaReservas = await 
-      Reservacion.find(query)
-        .populate("usuario", "nombre");
-
-    //Impresion registros
-    res.status(201).json({
-      msg: "Sus reservas son: ",
-      listaReservas,
-    });
-  } catch (err) {
-    res.status(404).send({
-      msg: "No se pudo las reservaciones del Cliente",
-      err,
-    });
-  }
-};
-
-const getReservaPorId = async (req = request, res = response) => {
-  try {
     const { id } = req.params;
-    const reserva = await Reservacion.findById(id).populate("usuario", "nombre");
-  
-    res.status(201).json({reservation: reserva});
+    const query = { _id: id, usuario: req.usuario._id, estado: true };
+    const reservasDB = await Reservacion.find(query).lean();
+
+    const matchs = [];
+    for (let j = 0; j < reservasDB.length; j++) {
+      const reservas = reservasDB[j];
+      const habitaciones = [];
+      for (let i = 0; i < reservas.habitaciones.length; i++) {
+        const habitacion = await Habitacion.findById(reservas.habitaciones[i].habitacion_id).lean();
+        if (habitacion) {
+          habitaciones.push(habitacion);
+        }
+      }
+      if (habitaciones.length > 0) {
+        reservas.habitaciones = habitaciones;
+        matchs.push(reservas);
+      }
+    }
+
+    if (!(matchs.length === 0)) {
+      return res.json({
+        msg: "Sus reservas son: ",
+        matchs,
+      });
+    }
   } catch (err) {
+    console.log(err);
     res.status(404).send({
-      msg: "No se pudo obtener la reservacion",
+      msg: "No se pudo obtener las reservaciones del Cliente",
       err,
     });
   }
+
 };
 
 //Realiza la creacion de la reservacion
@@ -180,39 +245,15 @@ const postReservacion = async (req = request, res = response) => {
       const reservaGuardada = await Reservacion(data);
       //Guarda la reserva
       await reservaGuardada.save();
-      res.status(201).json(reservaGuardada);
+      res.json({ "id": reservaGuardada._id });
     } else {
       res
         .status(409)
-        .json({ error: "Actualmente la habitacion no esta disponible" });
+        .json({ msg: "Actualmente la habitacion no esta disponible" });
     }
   } catch (err) {
     res.status(404).send({
       msg: "No se pudo agregar la habitacion",
-      err,
-    });
-  }
-};
-
-//Mostrar el listado de reservaciones por cliente
-const getReservacionesId = async (req = request, res = response) => {
-  try {
-    //Condiciones del get, devuelve todas las reservaciones realizadas
-    const query = { usuario: req.usuario._id, estado: true };
-    //Promesa para obtener los registros
-    const listaReservas = await 
-      Reservacion.find(query)
-        .populate("habitaciones", "precio capacidad disponible")
-        .populate("usuario", "nombre");
-
-    //Impresion registros
-    res.status(201).json({
-      msg: "Sus reservas son: ",
-      listaReservas,
-    });
-  } catch (err) {
-    res.status(404).send({
-      msg: "No se pudo obtener la reserva por ID",
       err,
     });
   }
@@ -225,9 +266,9 @@ const postHabitacionReservacion = async (req = request, res = response) => {
     const { id } = req.params;
     //Desestructuracion de los campos recibidos en el body
     const { habitacion_id } = req.body;
-  
+
     const habitacion = await existeHabitacionById(habitacion_id);
-  
+
     const reservas = await Reservacion.findById(id);
     if (habitacion.disponible === true) {
       if (!reservas.habitaciones.includes(id)) {
@@ -241,7 +282,7 @@ const postHabitacionReservacion = async (req = request, res = response) => {
           { _id: habitacion_id },
           { disponible: false }
         );
-  
+
         const totalActualizado = reservas.total + precio;
         const nuevaReserva = await Reservacion.findByIdAndUpdate(id, {
           total: totalActualizado,
@@ -320,28 +361,27 @@ const deleteReservacionHabitacion = async (req = request, res = response) => {
     const { id } = req.params;
     //Desestructuracion de los campos recibidos en el body
     const { habitacion_id } = req.body;
-  
     const habitacion = await existeHabitacionById(habitacion_id);
     const reservas = await Reservacion.findById(id);
-  
+
     const existeHabitacion = reservas.habitaciones
       .some(habitacion => habitacion.habitacion_id === habitacion_id);
     //return res.json({existeHabitacion});
     if (existeHabitacion) {
       //Obtiene el precio de la habitacion
       const precio = habitacion.precio;
-  
+
       const indice = reservas.habitaciones.findIndex(habitacion => habitacion.habitacion_id === habitacion_id);
-  
+
       //return res.json({indice});
-  
+
       reservas.habitaciones.splice(indice, 1);
       //Guarda la informacion en el array
       await reservas.save();
-  
+
       //Modifica el modelo en habitacion, cambiando el atributo disponible a true
       await Habitacion.updateMany({ _id: habitacion_id }, { disponible: true });
-  
+
       const totalActualizado = reservas.total - precio;
       const nuevaReserva = await Reservacion.findByIdAndUpdate(id, {
         total: totalActualizado,
@@ -366,7 +406,7 @@ const deleteReservacion = async (req = request, res = response) => {
   try {
     //Desestructuracion del parametro recibido a travez de la URL
     const { id } = req.params;
-  
+
     const reservas = await Reservacion.findById(id);
     for (let i = 0; i < reservas.habitaciones.length; i++) {
       const habitacion = await Habitacion.findById(
@@ -377,7 +417,7 @@ const deleteReservacion = async (req = request, res = response) => {
         { disponible: true }
       );
     }
-  
+
     //Eliminar fisicamente de la DB
     const reservaEliminada = await Reservacion.findByIdAndDelete(id);
     res
@@ -401,5 +441,5 @@ module.exports = {
   deleteReservacionHabitacion,
   deleteReservacion,
   postHabitacionReservacion,
-  getReservacionesId,
+  getReservacionesByHotel
 };

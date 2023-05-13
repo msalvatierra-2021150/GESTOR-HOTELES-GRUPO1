@@ -2,7 +2,7 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 
 //Controllers
-const { postCarrito, getCarrito, deleteCarrito, putCarrito } = require('../controllers/cartServicios');
+const { postCarrito, getCarrito, deleteCarrito, putCarrito,deleteAllCarrito } = require('../controllers/cartServicios');
 
 // Middlewares
 const { validarCampos } = require('../middlewares/validar-campos');
@@ -21,11 +21,10 @@ router.get('/mostrar', [
 
 // Crear categoria - privada - cualquier persona con un token válido
 
-router.post('/agregar/:itemId', [
+router.post('/agregar', [
     validarJWT,
     check('itemId', 'No es un id de Mongo Válido').isMongoId()
 ], postCarrito );
-
 
 
 // Actuaizar categoria - privada - cualquier persona con un token válido
@@ -44,5 +43,11 @@ router.delete('/eliminar/:itemId', [
     validarCampos
 ] ,deleteCarrito);
 
+//eliminar todo el carrito
+
+router.delete('/eliminarCarr', [
+    validarJWT,
+ 
+], deleteAllCarrito );
 
 module.exports = router;

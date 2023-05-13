@@ -15,21 +15,26 @@ const getServiciosHoteles = async (req = request, res = response) => {
         const query = {usuario:req.usuario.id }
         //obtenes 
         const listaFactura = await Factura.findOne(query);
-    
-        const reservacionF = listaFactura.cart_reservaciones;
         
+        const reservacionF = listaFactura.cart_reservaciones;
+       
         const hoteles = [];
         const ids=[];
         for(let x = 0; x< reservacionF.length;x++){       
             const reservaciones = await Reservaciones.findById(reservacionF[x].itemId);       
             const habitacion = await reservaciones.habitaciones;
+            
             for(let i = 0; i< habitacion.length;i++){
                 const habitaciones = await Habitaciones.findById(habitacion[i].habitacion_id);
                 const hotels = await Hotel.find(habitaciones.hotel);
+                
                 if(hotels){        
                     if(!ids.includes((habitaciones.hotel).toString())){
                         ids.push((habitaciones.hotel).toString());
-                        hoteles.push(hotels);
+                        
+                        hoteles.push(hotels[0]);
+
+                      
                     }
                 }          
             }
@@ -83,7 +88,7 @@ const getUsuarios = async (req = request, res = response) => {
         //condiciones del get
         const query = { estado: true , _id: req.usuario.id};
     
-        const listaUsuarios = await Usuario.findById(query);
+        const listaUsuarios = await Usuario.find(query);
             return res.json({
                 msg: 'get Api - Controlador Usuario',
                 listaUsuarios
@@ -97,7 +102,6 @@ const getUsuarios = async (req = request, res = response) => {
 }
 
 const postUsuario = async (req = request, res = response) => {
-
     try {
         //Desestructuración
         const { nombre, correo, password} = req.body;
@@ -111,12 +115,12 @@ const postUsuario = async (req = request, res = response) => {
         //Guardar en BD
         await usuarioGuardadoDB.save();
     
-        res.json({
+        return res.json({
             msg: 'Post Api - Post Usuario',
             usuarioGuardadoDB
         });
     } catch (err) {
-        res.status(404).send({
+        return res.status(400).send({
             msg: "No se pudo agregar el cliente",
             err,
           });

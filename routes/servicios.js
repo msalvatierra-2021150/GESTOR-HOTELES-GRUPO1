@@ -11,28 +11,31 @@ const router = Router();
 
 router.get('/mostrar',[
     validarJWT,
-    esAdminAppRole,
+    //esAdminAppRole,
     validarCampos,
 ] ,getServicios);
 
 router.post('/agregar', [
+    /*
     check('nombreServicio', 'El nombre es obligatorio').not().isEmpty(),
     check('precio', 'El precio es obligatorio').not().isEmpty(),
-    check('nombreServicio').custom( existeServicio ),
+    check('nombreServicio').custom( existeServicio ),*/
     validarCampos,
 ] ,postSerivicos);
 
 router.put('/editar/:id', [
+    /*
     check('nombreServicio', 'El nombre es obligatorio').not().isEmpty(),
     check('precio', 'El precio es obligatorio').not().isEmpty(),
     check('nombreServicio').custom( existeServicio ),
+    */
     validarCampos,
 ] ,putServicios);
 
 
 router.delete('/eliminar/:id', [
     validarJWT,
-    esAdminAppRole,
+    //esAdminAppRole,
     validarCampos
 ] ,deleteServicio);
 

@@ -3,29 +3,111 @@ const { request, response } = require('express')
 // Modelo
 const Hotel = require('../models/hotel');
 const Evento = require('../models/evento');
+const Habitacion = require('../models/habitacion');
+const Reservacion = require("../models/reservacion");
+
+const getHabitaciones = async (req = request, res = response)=>{
+    try {
+      const { id } = req.params;
+      const query = {hotel:id}
+      //obtiene las habitaciones del hotel 
+      const listaHabitaciones = await Habitacion.find(query);
+      console.log(listaHabitaciones);
+      //obtiene todas las reservaciones
+      const arregloHabitaciones = []
+      let cantidades = 0;
+      const resevacionHabit= await Reservacion.find();
+          
+          for(let h=0; h<listaHabitaciones.length;h++){
+             
+              for(let r=0; r<resevacionHabit.length;r++){
+             
+                  const retornoHabitacion = resevacionHabit[r].habitaciones
+                  
+                  const arreglo =retornoHabitacion.filter(c=>c.habitacion_id===(listaHabitaciones[h]._id).toString());
+                  //console.log(arreglo);
+                 if(arreglo.length > 0){
+                  const agregarDatos= arreglo[0]
+                  arregloHabitaciones.push({
+                      habitacion_id:agregarDatos.habitacion_id ,
+                      cantidadH:listaHabitaciones.length ,
+                      cantidad: cantidades,
+                      precio:agregarDatos.precio ,
+
+                  });
+                  
+                  cantidades= cantidades+1
+                 }
+              }
+          }
+         
+          
+          arregloHabitaciones.map(function(d){d.cantidad=cantidades})
+      res.json({
+          msg:"La habitaciones reservadas",arregloHabitaciones
+      })
+  } catch (err) {
+      res.status(404).send({
+          msg: "No se pudo obtener los eventos del Hotel",
+          err,
+        });
+  }
+
+}
+
+const getAdminHoteles = async (req = request, res = response) => {
+
+    const user = req.usuario._id;
+
+    const query = { usuario: user };
+
+    try {
+        const listaHoteles = await Hotel.find(query).populate('usuario', 'nombre')
+            .populate('departamento', 'nombre')
+            // Ordenando en base al rating (mayor rating aparece al inicio)
+            .sort({ rating: -1 });
+
+
+        res.json({
+            msg: 'GET API - Controlador hotel',
+            listaHoteles
+        });
+    } catch (err) {
+        res.status(404).send({
+            msg: "No se pudo obtener los hoteles",
+            err,
+        });
+    }
+
+}
 
 //------------------------ver los eventos del hotel-------------------------------------
 const getEventoH = async (req = request, res = response) => {
     try {
         const { id } = req.params;
         const hotelById = await Hotel.findById(id)
-    
+
         const arreglo = hotelById.eventos
         const eventos = [];
-        for(let x = 0; x< arreglo.length;x++){
-            const eventoH = await 
+        for (let x = 0; x < arreglo.length; x++) {
+            const eventoH = await
                 Evento.findById(arreglo[x]);
-    
+
             eventos.push(eventoH)
         }
+
+        if (eventos[0] === null) {
+            eventos.shift();
+        }
+
         res.json({
-            msg:eventos
+            eventos
         })
     } catch (err) {
         res.status(404).send({
             msg: "No se pudo obtener los eventos del Hotel",
             err,
-          });
+        });
     }
 }
 
@@ -39,9 +121,9 @@ const putEventosHotel = async (req = request, res = response) => {
     if (!(hotelById.eventos.includes(eventoById._id))) {
         hotelById.eventos.push(eventoById);
         await hotelById.save();
-        res.json({ hotelById });
+        res.status(200).json({msg: "El evento se agrego con exito" });
     }else{
-        res.json({msg: 'El evento ya esta agregado'});
+        res.status(500).json({msg: 'El evento seleccionado ya esta agregado en su hotel'});
     }
 };
 
@@ -169,5 +251,7 @@ module.exports = {
     putHotel,
     deleteHotel,
     getEventoH,
-    putEventosHotel
+    putEventosHotel,
+    getHabitaciones,
+    getAdminHoteles
 }
