@@ -12,8 +12,6 @@ const router = Router();
 
 //------------------------------GET route---------------------------------
 router.get('/', [
-    validarJWT,
-    // validarCampos
 ], getHoteles);
 
 router.get('/admin/hotel', [
@@ -28,7 +26,6 @@ router.get('/eventosH/:id', [
 
 //-----------------------------get habitaciones------------------------
 router.get('/habitacionesH/:id', [
-    validarJWT,
 ], getHabitaciones);
 
 //------------------------------READ by ID route---------------------------------

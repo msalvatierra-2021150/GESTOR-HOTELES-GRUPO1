@@ -41,8 +41,6 @@ router.post('/agregar',  [
 //------------------------------READ by Hotel route---------------------------------
 router.get('/hotel/:id', [
     check('id', 'No es un id valido').isMongoId(),
-    validarJWT,
-    validarCampos
 ], getHabitacionesByHotel);
 
 //------------------------------PUT route---------------------------------

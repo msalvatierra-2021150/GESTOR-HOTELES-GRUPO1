@@ -6,52 +6,51 @@ const Evento = require('../models/evento');
 const Habitacion = require('../models/habitacion');
 const Reservacion = require("../models/reservacion");
 
-const getHabitaciones = async (req = request, res = response)=>{
+const getHabitaciones = async (req = request, res = response) => {
     try {
-      const { id } = req.params;
-      const query = {hotel:id}
-      //obtiene las habitaciones del hotel 
-      const listaHabitaciones = await Habitacion.find(query);
-      console.log(listaHabitaciones);
-      //obtiene todas las reservaciones
-      const arregloHabitaciones = []
-      let cantidades = 0;
-      const resevacionHabit= await Reservacion.find();
-          
-          for(let h=0; h<listaHabitaciones.length;h++){
-             
-              for(let r=0; r<resevacionHabit.length;r++){
-             
-                  const retornoHabitacion = resevacionHabit[r].habitaciones
-                  
-                  const arreglo =retornoHabitacion.filter(c=>c.habitacion_id===(listaHabitaciones[h]._id).toString());
-                  //console.log(arreglo);
-                 if(arreglo.length > 0){
-                  const agregarDatos= arreglo[0]
-                  arregloHabitaciones.push({
-                      habitacion_id:agregarDatos.habitacion_id ,
-                      cantidadH:listaHabitaciones.length ,
-                      cantidad: cantidades,
-                      precio:agregarDatos.precio ,
-
-                  });
-                  
-                  cantidades= cantidades+1
-                 }
-              }
-          }
-         
-          
-          arregloHabitaciones.map(function(d){d.cantidad=cantidades})
-      res.json({
-          msg:"La habitaciones reservadas",arregloHabitaciones
-      })
-  } catch (err) {
-      res.status(404).send({
-          msg: "No se pudo obtener los eventos del Hotel",
-          err,
+        const { id } = req.params;
+        const query = { hotel: id }
+        //obtiene las habitaciones del hotel 
+        const listaHabitaciones = await Habitacion.find(query);
+        //console.log(listaHabitaciones);
+        //obtiene todas las reservaciones
+        const arregloHabitaciones = []
+        let cantidades = 1;
+        const resevacionHabit = await Reservacion.find();
+        const arreglo = [];
+        if (listaHabitaciones.length > 0) {
+            
+            for (let r = 0; r < resevacionHabit.length; r++) {
+                
+                const retornoHabitacion = resevacionHabit[r].habitaciones
+               
+                for(let i = 0;i< retornoHabitacion.length;i++){   
+                    if(listaHabitaciones.some(h => (h._id).toString() === retornoHabitacion[i].habitacion_id)){
+                        if(!arreglo.some(a => a.id === retornoHabitacion[i].habitacion_id)){
+                            arreglo.push({
+                                id:retornoHabitacion[i].habitacion_id,
+                                cantidad:cantidades
+                            })
+                            
+                        }else{
+                           arreglo[r]={id:retornoHabitacion[i].habitacion_id,cantidad:cantidades++}
+                          
+                        }
+        
+                    }
+                }
+            }
+        }
+        console.log(arreglo);
+        res.json({
+            msg: "La habitaciones reservadas", arreglo
+        })
+    } catch (err) {
+        res.status(404).send({
+            msg: "No se pudo obtener los eventos del Hotel",
+            err,
         });
-  }
+    }
 
 }
 
