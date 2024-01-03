@@ -1,41 +1,41 @@
-# RestServer IN6BM Gestor de Hoteles G1
+# RestServer IN6BM Hotel Manager G1
 
-Este es un RestServer con conexión a MongoDB.
+This is a RestServer with connection to MongoDB.
 
-## Requisitos previos
-Asegúrate de tener instalado Node.js en tu sistema. Puedes descargarlo en [Node.js Official Website](https://nodejs.org/).
+## Previous requirements
+Make sure you have Node.js installed on your system. You can download it at [Node.js Official Website](https://nodejs.org/).
 
-## Configuración de variables de entorno
+## Setting environment variables
 
-1. Renombra el archivo `example.env` a `.env` en la raíz del proyecto. Esto es necesario para tener las variables de entorno configuradas en el proyecto.
+1. Rename the `example.env` file to `.env` in the project root. This is necessary to have the environment variables set in the project.
 
-2. Abre el archivo `.env` y asegúrate de configurar las siguientes variables de entorno:
+2. Open the `.env` file and make sure to set the following environment variables:
 
-   - `PORT` : El puerto en el que deseas que el servidor escuche.
-   - `MONGODB_CNN` : La cadena de conexión a tu base de datos MongoDB.
-   - `SECRET_KEY_FOR_TOKEN` : La clave secreta utilizada para firmar y verificar tokens de autenticación.
+    - `PORT`: The port you want the server to listen on.
+    - `MONGODB_CNN` : The connection string to your MongoDB database.
+    - `SECRET_KEY_FOR_TOKEN` : The secret key used to sign and verify authentication tokens.
 
-## Instalación de dependencias
+## Installing dependencies
 
-Para instalar los módulos de Node.js necesarios, ejecuta el siguiente comando en la raíz del proyecto:
+To install the required Node.js modules, run the following command in the project root:
 
 ```
-npm intall
+npm install
 ```
 
-## Ejecución del proyecto
+## Project execution
 
-Para iniciar el servidor, utiliza el siguiente comando:
+To start the server, use the following command:
 ```
 npm run dev
 ```
 
-El servidor estará disponible en el puerto especificado en tu archivo `.env`.
+The server will be available on the port specified in your `.env` file.
 
-## Notas adicionales
+## Additional notes
 
-- Asegúrate de tener una base de datos MongoDB configurada y que la cadena de conexión sea correcta en tu archivo `.env`.
+- Make sure you have a MongoDB database configured and that the connection string is correct in your `.env` file.
 
-- Este README proporciona una guía básica para comenzar con el proyecto. A medida que se agreguen más funcionalidades al proyecto, considera expandir este README para proporcionar documentación adicional.
+- This README provides a basic guide to getting started with the project. As more functionality is added to the project, consider expanding this README to provide additional documentation.
 
-¡Disfruta trabajando en el proyecto RestServer IN6BM Gestor de Hoteles G1!
+Enjoy working on the RestServer IN6BM G1 Hotel Manager project!
